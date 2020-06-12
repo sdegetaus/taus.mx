@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-hello-world",
+  "author": "Santiago Degetau",
+  "description": "",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -11,15 +11,28 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "preview": "gatsby build && http-server public"
   },
   "dependencies": {
+    "@types/react-helmet": "^6.0.0",
     "gatsby": "^2.22.15",
+    "gatsby-plugin-catch-links": "^2.3.5",
+    "gatsby-plugin-intl": "^0.3.3",
+    "gatsby-plugin-react-helmet": "^3.3.4",
+    "gatsby-plugin-sass": "^2.3.4",
+    "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-transformer-remark": "^2.8.15",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "eslint-config-react-app": "^5.2.1",
+    "prettier": "^2.0.5"
   },
   "repository": {
     "type": "git",
