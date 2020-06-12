@@ -1,53 +1,81 @@
 import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { graphql } from "gatsby";
-
-const IndexPage = ({ intl, data }) => (
-  <Layout>
-    <SEO lang={intl.locale} title={intl.formatMessage({ id: "pages.home" })} />
-    <h1
-      dangerouslySetInnerHTML={{
-        __html: intl.formatMessage({ id: "content.home.title" }),
-      }}
-    />
-    <p>{intl.formatMessage({ id: "content.home.body" })}</p>
-    <hr />
-    <div>
-      {data.allMarkdownRemark.edges.map(item => {
-        const id = item.node.id;
-        const { path, title, date, author } = item.node.frontmatter;
-        return (
-          <Link to={path} key={id}>
-            <small>{date}</small>
-            <h3>{title}</h3>
-            <p>by {author}</p>
-          </Link>
-        );
-      })}
-    </div>
-  </Layout>
-);
 
 export const query = graphql`
-  {
-    allMarkdownRemark {
+  query($language: String!) {
+    allMarkdownRemark(filter: { frontmatter: { lang: { eq: $language } } }) {
       edges {
         node {
-          id
           frontmatter {
-            path
             title
+            slug
             date
             author
-            tags
+            lang
           }
+          id
         }
       }
     }
   }
 `;
+
+const IndexPage = ({ intl, data }) => {
+  console.log(data);
+
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     allMarkdownRemark {
+  //       edges {
+  //         node {
+  //           id
+  //           frontmatter {
+  //             slug
+  //             title
+  //             date
+  //             author
+  //             tags
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+
+  // const { data } = props;
+
+  return (
+    <Layout>
+      <SEO
+        lang={intl.locale}
+        title={intl.formatMessage({ id: "pages.home" })}
+      />
+      <h1
+        dangerouslySetInnerHTML={{
+          __html: intl.formatMessage({ id: "content.home.title" }),
+        }}
+      />
+      <p>{intl.formatMessage({ id: "content.home.body" })}</p>
+      <hr />
+      <ul>
+        {data.allMarkdownRemark.edges.map(item => {
+          const id = item.node.id;
+          const { slug, title, date, author } = item.node.frontmatter;
+          return (
+            <li key={id}>
+              <Link to={`/portfolio/${slug}`}>
+                <h3>{title}</h3>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </Layout>
+  );
+};
 
 export default injectIntl(IndexPage);

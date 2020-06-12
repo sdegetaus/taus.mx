@@ -1,36 +1,41 @@
 const path = require("path");
 
-exports.createPages = ({ actions, graphql }) => {
+module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const portfolioItemTemplate = path.resolve(
-    "src/templates/portfolio-item.tsx"
-  );
-
-  return graphql(`
-    {
+  const blogTemplate = path.resolve("./src/templates/portfolio-post.tsx");
+  const response = await graphql(`
+    query {
       allMarkdownRemark {
         edges {
           node {
-            id
-            html
             frontmatter {
-              path
-              title
-              date
-              author
-              tags
+              slug
+              lang
             }
           }
         }
       }
     }
-  `).then(res => {
-    if (res.errors) return Promise.reject(res.errors);
-    res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: portfolioItemTemplate,
-      });
+  `);
+
+  //   response.data.allSitePage.edges.forEach(({ node }) => {
+  //     createPage({
+  //       component: node.component,
+  //       path: node.path,
+  //       context: {
+  //         lang: node.language,
+  //       },
+  //     });
+  //   });
+
+  response.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      component: blogTemplate,
+      path: `/portfolio/${node.frontmatter.slug}`,
+      context: {
+        slug: node.frontmatter.slug,
+        lang: node.frontmatter.lang,
+      },
     });
   });
 };
