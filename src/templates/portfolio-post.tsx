@@ -20,8 +20,6 @@ export const query = graphql`
 `;
 
 const PortfolioPost = ({ intl, data }) => {
-  console.log(data);
-
   return (
     <Layout>
       {data.markdownRemark ? (

@@ -11,6 +11,30 @@ const SEO = ({
   meta = {},
   keywords = [],
 }) => {
+  // default meta pairs
+  const defaultMeta = [
+    {
+      name: `theme-color`,
+      content: `#102b44`,
+    },
+    {
+      name: `msapplication-navbutton-color`,
+      content: `#102b44`,
+    },
+    {
+      name: `apple-mobile-web-app-capable`,
+      content: `yes`,
+    },
+    {
+      name: `apple-mobile-web-app-status-bar-style`,
+      content: `black-translucent`,
+    },
+    {
+      name: `robots`,
+      content: `max-snippet:-1, max-image-preview:large, max-video-preview:-1`,
+    },
+  ];
+
   // grab site's metadata
   const siteMetadata = useStaticQuery(graphql`
     query {
@@ -38,6 +62,7 @@ const SEO = ({
         id: "site.metadata.title",
       })}`}
       meta={[
+        ...defaultMeta,
         {
           name: `description`,
           content: metaDescription,
