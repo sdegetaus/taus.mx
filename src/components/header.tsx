@@ -3,9 +3,17 @@ import Menu from "./menu";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 
 const Header = ({ intl }) => (
-  <header>
-    <Link to="/">{intl.formatMessage({ id: "site.name" })}</Link>
-    <Menu />
+  <header className="section">
+    <div className="inner">
+      <div className="logo">
+        <Link to="/">
+          <h1>
+            Taus<span>MX</span>
+          </h1>
+        </Link>
+      </div>
+      <Menu />
+    </div>
   </header>
 );
 

@@ -1,15 +1,18 @@
-import React from "react"
-import Header from "./header"
-import Footer from "./footer"
+import React from "react";
+import Header from "./header";
+import Footer from "./footer";
 
-import "./layout.scss"
+import "normalize.css";
+import "../styles/style.scss";
 
 const Layout = ({ children }) => (
   <>
-    <Header />
-    <main>{children}</main>
+    <div id="content">
+      <Header />
+      <main className="section">{children}</main>
+    </div>
     <Footer />
   </>
-)
+);
 
-export default Layout
+export default Layout;

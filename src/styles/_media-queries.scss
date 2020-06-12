@@ -1,0 +1,75 @@
+/* ----------------------------- */
+/* ------------ MINS ----------- */
+/* ----------------------------- */
+
+@mixin min-mobile {
+  @media (min-width: #{$min-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media (min-width: #{$min-tablet-width}) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: #{$min-desktop-width}) {
+    @content;
+  }
+}
+
+/* ----------------------------- */
+/* ------------ MAXS ----------- */
+/* ----------------------------- */
+
+@mixin max-mobile {
+  @media (max-width: #{$max-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: #{$max-tablet-width}) {
+    @content;
+  }
+}
+
+@mixin max-desktop {
+  @media (max-width: #{$max-desktop-width}) {
+    @content;
+  }
+}
+
+/* ----------------------------- */
+/* ---------- BETWEENS --------- */
+/* ----------------------------- */
+
+@mixin only-mobile {
+  @media (min-width: #{$min-mobile-width}) and (max-width: #{$max-tablet-width}) {
+    @content;
+  }
+}
+
+@mixin only-tablet {
+  @media (min-width: #{$min-tablet-width}) and (max-width: #{$max-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin only-desktop {
+  @media (min-width: #{$min-desktop-width}) {
+    @content;
+  }
+}
+
+/* ----------------------------- */
+/* ----------- OTHERS ---------- */
+/* ----------------------------- */
+
+@mixin only-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}

@@ -14,12 +14,16 @@ const Footer = ({ intl }) => {
   `);
 
   return (
-    <footer>
-      <span>
-        ©{new Date().getFullYear()}.{" "}
-        <Link to="/">{data.site.siteMetadata.author}</Link>.&nbsp;
-        {intl.formatMessage({ id: "all_rights_reserved" })}.
-      </span>
+    <footer className="section">
+      <div className="inner">
+        <div className="footer-meta">
+          <span>
+            ©{new Date().getFullYear()}.{" "}
+            <Link to="/">{data.site.siteMetadata.author}</Link>.&nbsp;
+            {intl.formatMessage({ id: "all_rights_reserved" })}.
+          </span>
+        </div>
+      </div>
     </footer>
   );
 };

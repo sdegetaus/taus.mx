@@ -22,16 +22,22 @@ const menuItems = [
 
 const Menu = ({ intl }) => {
   return (
-    <ul>
-      {menuItems.map(item => (
-        <li key={item.key}>
-          <Link to={`${item.path}`}>{intl.formatMessage({ id: item.id })}</Link>
-        </li>
-      ))}
-      <li>
-        <Language />
-      </li>
-    </ul>
+    <div className="navigation">
+      <nav id="desktop-nav">
+        <ul>
+          {menuItems.map(item => (
+            <li key={item.key} className="menu-item">
+              <Link to={`${item.path}`}>
+                {intl.formatMessage({ id: item.id })}
+              </Link>
+            </li>
+          ))}
+          <li className="menu-item language-switcher">
+            <Language />
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
