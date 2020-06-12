@@ -7,17 +7,20 @@ import SEO from "../components/seo";
 
 export const query = graphql`
   query($language: String!) {
-    allMarkdownRemark(filter: { frontmatter: { lang: { eq: $language } } }) {
+    allMarkdownRemark(filter: { fields: { lang: { eq: $language } } }) {
       edges {
         node {
           frontmatter {
             title
-            slug
             date
             author
-            lang
+            slug
+            tags
           }
-          id
+          fields {
+            lang
+            key
+          }
         }
       }
     }
@@ -40,10 +43,10 @@ const IndexPage = ({ intl, data }) => {
       <hr />
       <ul>
         {data.allMarkdownRemark.edges.map(item => {
-          const id = item.node.id;
+          const key = item.node.fields.key;
           const { slug, title, date, author } = item.node.frontmatter;
           return (
-            <li key={id}>
+            <li key={key}>
               <Link to={`/portfolio/${slug}`}>
                 <h3>{title}</h3>
               </Link>

@@ -1,6 +1,5 @@
 ---
 slug: "item-0"
-lang: "en"
 date: "2018-04-09"
 title: "My First Gatsby Post"
 author: "Santiago Degetau"

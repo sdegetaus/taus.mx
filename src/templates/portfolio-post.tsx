@@ -6,10 +6,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 export const query = graphql`
-  query($slug: String!, $language: String! = "en") {
-    markdownRemark(
-      frontmatter: { slug: { eq: $slug }, lang: { eq: $language } }
-    ) {
+  query($key: String!, $language: String! = "en") {
+    markdownRemark(fields: { key: { eq: $key }, lang: { eq: $language } }) {
       frontmatter {
         title
         author
@@ -38,7 +36,7 @@ const PortfolioPost = ({ intl, data }) => {
           <h1>{data.markdownRemark.frontmatter.title}</h1>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.markdownRemark.frontmatter.html,
+              __html: data.markdownRemark.html,
             }}
           />
           {data.markdownRemark.frontmatter.tags.join(", ")}

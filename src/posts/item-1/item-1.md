@@ -1,6 +1,5 @@
 ---
 slug: "item-1"
-lang: "en"
 date: "2018-04-09"
 title: "The Second Gatsby Post"
 author: "Santiago Degetau"
