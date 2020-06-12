@@ -1,29 +1,32 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Helmet } from "react-helmet";
+import { injectIntl } from "gatsby-plugin-intl";
+import { graphql, useStaticQuery } from "gatsby";
 
-function SEO({
+const SEO = ({
+  intl,
   lang = `en`,
   title,
   description = "",
   meta = {},
   keywords = [],
-}) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+}) => {
+  // grab site's metadata
+  const siteMetadata = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
         }
       }
-    `
-  )
+    }
+  `).site.siteMetadata;
 
-  const metaDescription = description || site.siteMetadata.description
+  // normalize metadata
+  const metaDescription =
+    description || intl.formatMessage({ id: "site.metadata.description" });
+  const metaKeywords =
+    keywords?.join(",") || intl.formatMessage({ id: "site.metadata.keywords" });
 
   return (
     <Helmet
@@ -31,52 +34,25 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s – ${site.siteMetadata.title}`}
-      // meta={[
-      //   {
-      //     name: `description`,
-      //     content: metaDescription,
-      //   },
-      //   {
-      //     property: `og:title`,
-      //     content: title,
-      //   },
-      //   {
-      //     property: `og:description`,
-      //     content: metaDescription,
-      //   },
-      //   {
-      //     property: `og:type`,
-      //     content: `website`,
-      //   },
-      //   {
-      //     name: `twitter:card`,
-      //     content: `summary`,
-      //   },
-      //   {
-      //     name: `twitter:creator`,
-      //     content: site.siteMetadata.author,
-      //   },
-      //   {
-      //     name: `twitter:title`,
-      //     content: title,
-      //   },
-      //   {
-      //     name: `twitter:description`,
-      //     content: metaDescription,
-      //   },
-      // ]
-      //   .concat(
-      //     keywords.length > 0
-      //       ? {
-      //           name: `keywords`,
-      //           content: keywords.join(`, `),
-      //         }
-      //       : []
-      //   )
-      //   .concat(meta)}
+      titleTemplate={`%s – ${intl.formatMessage({
+        id: "site.metadata.title",
+      })}`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: `author`,
+          content: siteMetadata.author,
+        },
+        {
+          name: `keywords`,
+          content: metaKeywords,
+        },
+      ]}
     />
-  )
-}
+  );
+};
 
-export default SEO
+export default injectIntl(SEO);

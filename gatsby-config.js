@@ -1,7 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: `Santiago Degetau's Design & Web Development Portfolio`,
-    description: `Santiago Degetau's online portfolio: Mexican visual designer, 3D artist, web & game developer and a professional hobbyist`,
     author: `Santiago Degetau`,
   },
   plugins: [

@@ -1,6 +1,11 @@
 {
   "site": {
-    "name": "TausMX"
+    "name": "TausMX",
+    "metadata": {
+      "title": "Santiago Degetau's Design & Web Development Portfolio",
+      "description": "Santiago Degetau's online portfolio: Mexican visual designer, 3D artist, web & game developer and a professional hobbyist",
+      "keywords": "default,keywords,here"
+    }
   },
   "all_rights_reserved": "All rights reserved",
   "not_found": {

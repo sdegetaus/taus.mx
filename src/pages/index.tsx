@@ -1,6 +1,6 @@
 import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -25,29 +25,6 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ intl, data }) => {
-  console.log(data);
-
-  // const data = useStaticQuery(graphql`
-  //   {
-  //     allMarkdownRemark {
-  //       edges {
-  //         node {
-  //           id
-  //           frontmatter {
-  //             slug
-  //             title
-  //             date
-  //             author
-  //             tags
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
-  // const { data } = props;
-
   return (
     <Layout>
       <SEO
