@@ -3,19 +3,6 @@ module.exports = {
     author: `Santiago Degetau`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-intl`,
-      options: {
-        path: `${__dirname}/src/intl`,
-        languages: [`en`, `es`],
-        defaultLanguage: `en`,
-        redirect: false,
-      },
-    },
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -23,11 +10,39 @@ module.exports = {
         allExtensions: true,
       },
     },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "src",
         path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `es`],
+        defaultLanguage: `en`,
+        redirect: false,
       },
     },
   ],

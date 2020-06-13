@@ -5,6 +5,8 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+import indexStyles from "./index.module.scss";
+
 export const query = graphql`
   query($language: String!) {
     allMarkdownRemark(filter: { fields: { lang: { eq: $language } } }) {
@@ -29,19 +31,28 @@ export const query = graphql`
 
 const IndexPage = ({ intl, data }) => {
   return (
-    <Layout>
+    <Layout
+      pageName={"index"}
+      mainClass={`vertical-space ${indexStyles.wrapper}`}
+    >
       <SEO
         lang={intl.locale}
         title={intl.formatMessage({ id: "pages.home" })}
       />
-      <h1
-        dangerouslySetInnerHTML={{
-          __html: intl.formatMessage({ id: "content.home.title" }),
-        }}
-      />
-      <p>{intl.formatMessage({ id: "content.home.body" })}</p>
-      <hr />
-      <ul>
+      <div className="inner">
+        <div className={indexStyles.title}>
+          <h3
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: "content.home.title" }),
+            }}
+          />
+        </div>
+        <div className={indexStyles.body}>
+          <p>{intl.formatMessage({ id: "content.home.body" })}</p>
+        </div>
+      </div>
+
+      {/* <ul>
         {data.allMarkdownRemark.edges.map(item => {
           const key = item.node.fields.key;
           const { slug, title, date, author } = item.node.frontmatter;
@@ -53,7 +64,7 @@ const IndexPage = ({ intl, data }) => {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </Layout>
   );
 };

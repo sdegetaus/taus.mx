@@ -29,8 +29,6 @@ const PortfolioPost = ({ intl, data }) => {
             title={data.markdownRemark.frontmatter.title}
             keywords={data.markdownRemark.frontmatter.tags}
           />
-          <Link to={`/`}>Go back</Link>
-          <hr />
           <h1>{data.markdownRemark.frontmatter.title}</h1>
           <div
             dangerouslySetInnerHTML={{
