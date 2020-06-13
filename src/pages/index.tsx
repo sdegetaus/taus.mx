@@ -39,17 +39,15 @@ const IndexPage = ({ intl, data }) => {
         lang={intl.locale}
         title={intl.formatMessage({ id: "pages.home" })}
       />
-      <div className="inner">
-        <div className={indexStyles.title}>
-          <h3
-            dangerouslySetInnerHTML={{
-              __html: intl.formatMessage({ id: "content.home.title" }),
-            }}
-          />
-        </div>
-        <div className={indexStyles.body}>
-          <p>{intl.formatMessage({ id: "content.home.body" })}</p>
-        </div>
+      <div className={indexStyles.title}>
+        <h3
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: "content.home.title" }),
+          }}
+        />
+      </div>
+      <div className={indexStyles.body}>
+        <p>{intl.formatMessage({ id: "content.home.body" })}</p>
       </div>
 
       {/* <ul>

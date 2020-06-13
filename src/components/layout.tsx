@@ -8,6 +8,7 @@ import "../styles/style.scss";
 interface Props {
   pageName?: string;
   mainClass?: string;
+  innerClass?: string;
   children?: JSX.Element[];
 }
 
@@ -16,7 +17,11 @@ const Layout = (props: Props) => {
     <>
       <div id="content" className={props.pageName ?? ""}>
         <Header />
-        <main className={`section ${props?.mainClass}`}>{props.children}</main>
+        <main className={`section ${props.mainClass ?? ""}`}>
+          <div className={`inner ${props.innerClass ?? ""}`}>
+            {props.children}
+          </div>
+        </main>
       </div>
       <Footer />
     </>

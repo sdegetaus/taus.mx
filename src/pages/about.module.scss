@@ -1,0 +1,146 @@
+@import "../styles/_variables";
+@import "../styles/_mixins";
+@import "../styles/_media-queries";
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.body {
+  width: 100%;
+  text-align: center;
+}
+
+.image {
+  margin-bottom: $space-md;
+
+  @include max-tablet {
+    margin-bottom: $space-sm;
+  }
+
+  img {
+    @include global-animation;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid $borders-base;
+    box-shadow: 0 3px 4px 0 rgba($primary-dark, 0.1);
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: $space-sm;
+  padding-bottom: $space-sm;
+  line-height: 2;
+  border-bottom: 1px solid $borders-light;
+  h2 {
+    font-size: 26px;
+    line-height: 1;
+  }
+}
+
+.content {
+  margin-bottom: $space-md;
+  font-size: 15px;
+  line-height: 1.75em;
+
+  p {
+    margin-bottom: $space-xs;
+  }
+
+  p,
+  span {
+    color: $primary-light;
+  }
+
+  p,
+  span,
+  strong,
+  a,
+  i {
+    @include secondary-font;
+  }
+
+  span,
+  i {
+    font-style: italic;
+
+    &.meta {
+      font-size: 13px;
+    }
+  }
+
+  a {
+    color: $accent-base;
+    &:hover {
+      color: $accent-base;
+      text-decoration: underline;
+    }
+  }
+}
+
+// .buttons {
+//   margin-bottom: $space-lg;
+//   width: 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+
+//   a {
+//     margin-left: $space-xs;
+//     margin-right: $space-xs;
+//   }
+
+//   @include only-desktop {
+//     a:first-of-type {
+//       margin: 0;
+//       margin-right: $space-xs;
+//     }
+
+//     a:last-of-type {
+//       margin: 0;
+//       margin-left: $space-xs;
+//     }
+//   }
+
+//   @include max-tablet {
+//     a {
+//       width: 50%;
+//     }
+
+//     a:first-of-type {
+//       margin-bottom: $space-sm;
+//     }
+//   }
+// }
+// .icons {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   a {
+//     margin-left: $space-xs;
+//     margin-right: $space-xs;
+
+//     svg {
+//       width: 27px;
+//       fill: $primary-light;
+//     }
+
+//     &:hover {
+//       svg {
+//         fill: $primary-base;
+//       }
+//     }
+//   }
+// }
