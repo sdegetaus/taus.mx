@@ -1,8 +1,8 @@
-import React from "react"
-import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import React from "react";
+import { injectIntl } from "gatsby-plugin-intl";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const ContactPage = ({ intl }) => (
   <Layout>
@@ -12,6 +12,6 @@ const ContactPage = ({ intl }) => (
     />
     <h1>{intl.formatMessage({ id: "pages.contact" })}</h1>
   </Layout>
-)
+);
 
-export default injectIntl(ContactPage)
+export default injectIntl(ContactPage);

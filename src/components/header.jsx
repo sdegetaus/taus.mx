@@ -2,6 +2,8 @@ import React from "react";
 import Menu from "./menu";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 
+import "./header.scss";
+
 const Header = ({ intl }) => (
   <header className="section">
     <div className="inner">

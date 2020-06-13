@@ -3,14 +3,30 @@ import { Helmet } from "react-helmet";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
-const SEO = ({
-  intl,
-  lang = `en`,
-  title,
-  description = "",
-  meta = {},
-  keywords = [],
-}) => {
+interface Props {
+  intl?: any;
+  lang?: string;
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+  keywords?: string[];
+}
+
+const SEO = (props: Props) => {
+  const { intl, lang = "en", title, description, bodyClass, keywords } = props;
+  const query = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `);
+
+  // grab site's metadata
+  const siteMetadata = query.site.siteMetadata;
+
   // default meta pairs
   const defaultMeta = [
     {
@@ -35,17 +51,6 @@ const SEO = ({
     },
   ];
 
-  // grab site's metadata
-  const siteMetadata = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          author
-        }
-      }
-    }
-  `).site.siteMetadata;
-
   // normalize metadata
   const metaDescription =
     description || intl.formatMessage({ id: "site.metadata.description" });
@@ -54,6 +59,7 @@ const SEO = ({
 
   return (
     <Helmet
+      bodyAttributes={{ class: bodyClass ?? "" }}
       htmlAttributes={{
         lang,
       }}

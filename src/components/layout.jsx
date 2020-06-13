@@ -5,22 +5,14 @@ import Footer from "./footer";
 import "normalize.css";
 import "../styles/style.scss";
 
-interface Props {
-  pageName?: string;
-  mainClass?: string;
-  innerClass?: string;
-  children?: JSX.Element[];
-}
-
-const Layout = (props: Props) => {
+const Layout = props => {
+  const { mainClass, innerClass, children } = props;
   return (
     <>
       <div id="content" className={props.pageName ?? ""}>
         <Header />
-        <main className={`section ${props.mainClass ?? ""}`}>
-          <div className={`inner ${props.innerClass ?? ""}`}>
-            {props.children}
-          </div>
+        <main className={`section ${mainClass ?? ""}`}>
+          <div className={`inner ${innerClass ?? ""}`}>{children}</div>
         </main>
       </div>
       <Footer />

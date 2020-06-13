@@ -3,13 +3,6 @@ module.exports = {
     author: `Santiago Degetau`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true,
-        allExtensions: true,
-      },
-    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,

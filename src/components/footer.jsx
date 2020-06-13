@@ -2,6 +2,9 @@ import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
+import "font-awesome/scss/font-awesome.scss";
+import "./footer.scss";
+
 const Footer = ({ intl }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -14,12 +17,13 @@ const Footer = ({ intl }) => {
   `);
 
   return (
-    <footer className="section">
-      <div className="inner">
-        <div className="footer-meta">
-          <span>
-            ©{new Date().getFullYear()}.{" "}
-            <Link to="/">{data.site.siteMetadata.author}</Link>.&nbsp;
+    <footer className={"section"}>
+      <div className={"inner"}>
+        <div className={"meta"}>
+          <span className={"copy"}>
+            <i className="fa fa-copyright"></i>
+            {new Date().getFullYear()}.&nbsp;
+            <Link to="/">{data.site.siteMetadata.author}.</Link>&nbsp;
             {intl.formatMessage({ id: "all_rights_reserved" })}.
           </span>
         </div>

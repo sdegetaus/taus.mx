@@ -1,11 +1,12 @@
 import React from "react";
-import { injectIntl, Link } from "gatsby-plugin-intl";
+import { injectIntl } from "gatsby-plugin-intl";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import indexStyles from "./index.module.scss";
+import "font-awesome/scss/font-awesome.scss";
+import "./index.scss";
 
 export const query = graphql`
   query($language: String!) {
@@ -31,38 +32,21 @@ export const query = graphql`
 
 const IndexPage = ({ intl, data }) => {
   return (
-    <Layout
-      pageName={"index"}
-      mainClass={`vertical-space ${indexStyles.wrapper}`}
-    >
+    <Layout pageName={"index"}>
       <SEO
-        lang={intl.locale}
+        lang={intl.locale.toString()}
         title={intl.formatMessage({ id: "pages.home" })}
       />
-      <div className={indexStyles.title}>
+      <div className="title">
         <h3
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage({ id: "content.home.title" }),
           }}
         />
       </div>
-      <div className={indexStyles.body}>
+      <div className={"indexStyles.body"}>
         <p>{intl.formatMessage({ id: "content.home.body" })}</p>
       </div>
-
-      {/* <ul>
-        {data.allMarkdownRemark.edges.map(item => {
-          const key = item.node.fields.key;
-          const { slug, title, date, author } = item.node.frontmatter;
-          return (
-            <li key={key}>
-              <Link to={`/portfolio/${slug}`}>
-                <h3>{title}</h3>
-              </Link>
-            </li>
-          );
-        })}
-      </ul> */}
     </Layout>
   );
 };

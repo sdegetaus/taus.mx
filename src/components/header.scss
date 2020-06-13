@@ -1,0 +1,61 @@
+@import "../styles/_variables";
+@import "../styles/_mixins";
+@import "../styles/_media-queries";
+
+header {
+  height: $HEADER_HEIGHT_DESKTOP;
+
+  @include max-tablet {
+    height: $HEADER_HEIGHT_TABLET;
+  }
+
+  @include max-mobile {
+    height: $HEADER_HEIGHT_MOBILE;
+  }
+
+  align-items: center;
+  background-color: white;
+  @include global-animation;
+
+  .logo {
+    text-align: left;
+    width: 25%;
+    text-transform: uppercase;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    float: left;
+
+    @include max-tablet {
+      width: 50%;
+    }
+
+    a {
+      &,
+      h1,
+      span {
+        @include global-animation;
+      }
+
+      h1 {
+        color: $primary-base;
+        font-size: 22px;
+        @include max-tablet {
+          font-size: 24px;
+        }
+        span {
+          color: $primary-light;
+        }
+      }
+
+      &:hover {
+        h1 {
+          color: $secondary-base;
+        }
+        span {
+          color: $orange-base;
+        }
+      }
+    }
+  }
+}

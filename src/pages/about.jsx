@@ -1,26 +1,20 @@
 import React from "react";
-import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl";
+import { injectIntl } from "gatsby-plugin-intl";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import aboutStyles from "./about.module.scss";
-
 const AboutPage = ({ intl }) => (
-  <Layout
-    pageName={aboutStyles.about}
-    innerClass={aboutStyles.inner}
-    mainClass={`vertical-space`}
-  >
+  <Layout>
     <SEO lang={intl.locale} title={intl.formatMessage({ id: "pages.about" })} />
-    <div className={`${aboutStyles.body}`}>
-      <div className={`${aboutStyles.image}`}>
+    <div className={``}>
+      <div className={``}>
         <img src="" alt="" />
       </div>
-      <div className={`${aboutStyles.title}`}>
+      <div className={``}>
         <h2>{intl.formatMessage({ id: "content.about.title" })}</h2>
       </div>
-      <div className={`${aboutStyles.content}`}>
+      <div className={``}>
         <p
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage({ id: "content.about.body" }),
