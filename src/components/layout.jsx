@@ -6,10 +6,10 @@ import "normalize.css";
 import "../styles/style.scss";
 
 const Layout = props => {
-  const { mainClass, innerClass, children } = props;
+  const { pageName, mainClass, innerClass, children } = props;
   return (
     <>
-      <div id="content" className={props.pageName ?? ""}>
+      <div id="content" className={pageName ?? ""}>
         <Header />
         <main className={`section ${mainClass ?? ""}`}>
           <div className={`inner ${innerClass ?? ""}`}>{children}</div>

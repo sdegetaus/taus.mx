@@ -1,24 +1,26 @@
 @import "../styles/_variables";
 @import "../styles/_mixins";
 
-.wrapper {
+.index {
   text-align: center;
-}
-
-.title {
-  font-size: 76px;
-  margin-bottom: 30px;
-  line-height: 1;
-  strong {
-    font-weight: 500;
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: $space-md * 2;
   }
-}
-
-.body p {
-  @include primary-font;
-  color: $primary-light;
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  margin-bottom: 45px;
+  .title {
+    font-size: 76px;
+    margin-bottom: $space-md;
+    line-height: 1;
+    strong {
+      font-weight: 500;
+    }
+  }
+  .body p {
+    @include primary-font;
+    color: $primary-light;
+    font-size: 22px;
+    font-weight: 300;
+  }
 }

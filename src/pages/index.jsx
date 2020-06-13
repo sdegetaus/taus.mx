@@ -32,7 +32,7 @@ export const query = graphql`
 
 const IndexPage = ({ intl, data }) => {
   return (
-    <Layout pageName={"index"}>
+    <Layout mainClass={"index"}>
       <SEO
         lang={intl.locale.toString()}
         title={intl.formatMessage({ id: "pages.home" })}
@@ -44,7 +44,7 @@ const IndexPage = ({ intl, data }) => {
           }}
         />
       </div>
-      <div className={"indexStyles.body"}>
+      <div className="body">
         <p>{intl.formatMessage({ id: "content.home.body" })}</p>
       </div>
     </Layout>

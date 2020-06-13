@@ -180,6 +180,8 @@ a.icon {
 
 button {
   &.link {
+    @include global-animation;
+    color: $primary-dark;
     display: inline-block;
     text-align: center;
     align-items: flex-start;
@@ -190,6 +192,9 @@ button {
     border-style: none;
     &:focus {
       outline: none;
+    }
+    &:hover {
+      color: $accent-base;
     }
   }
 }

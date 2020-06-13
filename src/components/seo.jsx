@@ -3,16 +3,7 @@ import { Helmet } from "react-helmet";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
-interface Props {
-  intl?: any;
-  lang?: string;
-  title?: string;
-  description?: string;
-  bodyClass?: string;
-  keywords?: string[];
-}
-
-const SEO = (props: Props) => {
+const SEO = (props) => {
   const { intl, lang = "en", title, description, bodyClass, keywords } = props;
   const query = useStaticQuery(graphql`
     query {
