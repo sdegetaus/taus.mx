@@ -5,6 +5,7 @@ import Footer from "./footer";
 // global styles import
 import "normalize.css";
 import "../styles/style.scss";
+import "font-awesome/scss/font-awesome.scss";
 
 import structStyles from "../styles/structure.module.scss";
 import layoutStyles from "./layout.module.scss";

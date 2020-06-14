@@ -17,7 +17,7 @@
       "body": "Graphic Designer, 3D Artist, Web & Game Developer and a Professional Hobbyist",
       "cta": {
         "title": "Want to get in touch?",
-        "body": "You can reach me at <strong>santiago@taus.mx</strong>"
+        "body": "You can reach me at <strong>santiago<span class=\"fa fa-at\"></span>taus.mx</strong>"
       }
     },
     "404": {

@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "gatsby-plugin-intl";
 import Img from "gatsby-image";
 
-import "font-awesome/scss/font-awesome.scss";
 import archiveStyles from "./archive.module.scss";
 
 const Archive = props => {
   const nodes = props.data.allMarkdownRemark.edges;
-  return (
+  return nodes.length > 0 ? (
     <div className={archiveStyles.archive}>
       {nodes.map(({ node }) => {
         const {
@@ -54,7 +53,13 @@ const Archive = props => {
         );
       })}
     </div>
+  ) : (
+    <div className={`${archiveStyles.noData}`}>
+      <h4>Nothing here!</h4>
+    </div>
   );
 };
+
+// todo: add as alert!
 
 export default Archive;

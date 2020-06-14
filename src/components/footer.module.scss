@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+.inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $borders-light;
+}
+
 .meta {
   font-weight: 300;
   line-height: 1;
@@ -29,15 +37,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .fa {
-    margin-right: 2px;
-    font-size: 11px;
-    margin-top: 2px;
-  }
   a {
     font-weight: 400;
     &:hover {
       text-decoration: underline;
     }
   }
+}
+
+.copyright-icon {
+  margin-right: 2px;
+  font-size: 11px;
+  margin-top: 2px;
 }

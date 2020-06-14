@@ -2,7 +2,6 @@ import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
-import "font-awesome/scss/font-awesome.scss";
 import structStyles from "../styles/structure.module.scss";
 import footerStyles from "./footer.module.scss";
 
@@ -19,10 +18,10 @@ const Footer = ({ intl }) => {
 
   return (
     <footer className={`${footerStyles.footer} ${structStyles.section}`}>
-      <div className={`${structStyles.inner}`}>
+      <div className={`${structStyles.inner} ${footerStyles.inner}`}>
         <div className={`${footerStyles.meta}`}>
           <span className={`${footerStyles.copy}`}>
-            <i className="fa fa-copyright"></i>
+            <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
             {new Date().getFullYear()}.&nbsp;
             <Link to="/">{data.site.siteMetadata.author}.</Link>&nbsp;
             {intl.formatMessage({ id: "all_rights_reserved" })}.

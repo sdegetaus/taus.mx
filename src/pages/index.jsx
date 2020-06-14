@@ -7,7 +7,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Archive from "../components/archive";
 
-import "font-awesome/scss/font-awesome.scss";
 import indexStyles from "./index.module.scss";
 
 export const query = graphql`

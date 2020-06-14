@@ -12,7 +12,7 @@
 }
 
 .content {
-  margin: $space-md * 3 0 $space-md * 2 0;
+  margin: $space-md * 4 0 $space-md * 3 0;
 }
 
 .title {
@@ -54,8 +54,6 @@
 
 .cta {
   width: 100%;
-  // border-top: 1px solid $borders-light;
-  border-bottom: 1px solid $borders-light;
   padding: $space-lg * 2 0;
   h4 {
     font-size: 35px;
@@ -65,5 +63,14 @@
     font-weight: 300;
     @include primary-font;
     color: $primary-light;
+    strong {
+      font-weight: 300;
+      color: $accent-base;
+    }
+  }
+  span {
+    color: $accent-base;
+    margin: 0 1px;
+    font-size: 14px;
   }
 }
