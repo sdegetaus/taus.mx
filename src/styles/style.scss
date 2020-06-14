@@ -11,5 +11,6 @@
 body {
   @include primary-font;
   margin: 0;
+  box-sizing: border-box;
   overflow-y: overlay;
 }

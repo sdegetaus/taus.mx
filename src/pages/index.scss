@@ -7,36 +7,42 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: $space-lg * 2 0;
+  }
+  .content {
+    margin: $space-md * 3 0 $space-md * 2 0;
   }
   .title {
+    margin-bottom: $space-sm;
     h1 {
       font-size: 76px;
       line-height: 1;
     }
-    margin-bottom: $space-md;
     strong {
       font-weight: 500;
     }
   }
-  .body p {
-    @include primary-font;
-    color: $primary-light;
-    font-size: 22px;
-    font-weight: 300;
+  .body {
     margin-bottom: $space-md;
+    p {
+      @include primary-font;
+      color: $primary-light;
+      font-size: 22px;
+      font-weight: 300;
+    }
   }
   .icons {
     width: 100%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: $space-lg;
     li:not(:last-child) {
       margin-right: $space-sm;
     }
     a {
       font-size: 30px;
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
   }
 }

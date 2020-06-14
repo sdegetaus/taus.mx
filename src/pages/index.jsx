@@ -42,27 +42,29 @@ const IndexPage = ({ intl, data }) => {
         lang={intl.locale.toString()}
         title={intl.formatMessage({ id: "pages.home" })}
       />
-      <div className={"title"}>
-        <h1
-          dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: "content.home.title" }),
-          }}
-        />
+      <div className={"content"}>
+        <div className={"title"}>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: "content.home.title" }),
+            }}
+          />
+        </div>
+        <div className={"body"}>
+          <p>{intl.formatMessage({ id: "content.home.body" })}</p>
+        </div>
+        <ul className={"icons"}>
+          {SocialData.map(key => (
+            <li key={key.name}>
+              <a
+                className={`link ${key.icon}`}
+                href={key.url}
+                title={key.name}
+              ></a>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className={"body"}>
-        <p>{intl.formatMessage({ id: "content.home.body" })}</p>
-      </div>
-      <ul className={"icons"}>
-        {SocialData.map(key => (
-          <li key={key.name}>
-            <a
-              className={`link ${key.icon}`}
-              href={key.url}
-              title={key.name}
-            ></a>
-          </li>
-        ))}
-      </ul>
       <Archive data={data} />
     </Layout>
   );
