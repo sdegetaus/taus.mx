@@ -2,29 +2,25 @@
   "site": {
     "name": "TausMX",
     "metadata": {
-      "title": "Santiago Degetau's Design & Web Development Portfolio",
-      "description": "Santiago Degetau's online portfolio: Mexican visual designer, 3D artist, web & game developer and a professional hobbyist",
-      "keywords": "default,keywords,here"
+      "title": "Portafolio de Diseño y Programación de Santiago Degetau",
+      "description": "Portfolio de Santiago Degetau: Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web Mexicano",
+      "keywords": "santiago,degetau,portafolio,diseñador,programador"
     }
-  },
-  "all_rights_reserved": "Todos los derechos reservados",
-  "not_found": {
-    "title": "¡Página no encontrada!"
   },
   "pages": {
     "home": "Inicio",
-    "about": "Acerca",
-    "contact": "Contacto",
     "404": "404"
   },
   "content": {
     "home": {
       "title": "Hola, soy <strong>Santiago</strong>",
-      "body": "Diseñador gráfico, artista 3D, desarrollador web y videojuegos, y hobista profesional"
+      "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web"
     },
-    "about": {
-      "title": "Acerca de mí",
-      "body": "[ESPAÑOL] Hello there! My name is <strong>Santiago Degetau</strong>, I am a twenty-something year old designer & developer living in Mexico. I have over five years of work experience in graphic design, more than two years of programming know-how and an unlimited drive to learn and improve every day."
+    "404": {
+      "title": "404",
+      "subtitle": "¡La página que estás buscando no existe!"
     }
-  }
+  },
+  "all_rights_reserved": "Todos los derechos reservados",
+  "return_home": "Regresar al Inicio"
 }
