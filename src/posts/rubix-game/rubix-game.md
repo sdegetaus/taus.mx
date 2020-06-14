@@ -5,6 +5,7 @@ title: "Rubix Game"
 author: "Santiago Degetau"
 tags: ["unity", "game development"]
 featuredImage: featured.png
+featuredImageAlt: "This is the alt text for the featured image"
 ---
 
 ![Rubix game](./featured.png)

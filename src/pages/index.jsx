@@ -64,10 +64,10 @@ const IndexPage = ({ intl, data }) => {
           {SocialData.map(key => (
             <li key={key.name}>
               <a
-                aria-label="button"
                 className={`link ${key.icon}`}
                 href={key.url}
                 title={key.name}
+                aria-label={key.name}
               ></a>
             </li>
           ))}

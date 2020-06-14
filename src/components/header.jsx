@@ -8,7 +8,12 @@ const Header = ({ intl }) => (
   <header className="section">
     <div className="inner">
       <div className="logo">
-        <Link to="/">
+        <Link
+          to="/"
+          title={`${intl.formatMessage({
+            id: "pages.home",
+          })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
+        >
           <h1>
             Taus<span>MX</span>
           </h1>
