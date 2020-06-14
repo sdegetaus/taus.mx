@@ -1,0 +1,36 @@
+@import "../styles/_variables";
+@import "../styles/_media-queries";
+
+.archive {
+  display: grid;
+  grid-gap: $space-sm;
+  grid-template-columns: auto auto auto;
+  .item {
+    position: relative;
+    .item-image {
+      width: 100%;
+      box-shadow: 0 6px 4px -5px rgba($primary-dark, 0.2);
+      overflow: hidden;
+      border-radius: 2px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .item-title {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #fff;
+      font-weight: 300;
+      background-color: rgba(113, 66, 154, 0);
+      //   opacity: 0;
+    }
+  }
+}

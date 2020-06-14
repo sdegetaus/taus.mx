@@ -7,33 +7,20 @@ const Language = () => {
   return (
     <>
       <IntlContextConsumer>
-        {({ language }) => (
-          <button
-            className="link"
-            onClick={() => changeLocale(language === "en" ? "es" : "en")}
-          >
-            {language === "en" ? "es" : "en"}
-          </button>
-        )}
+        {({ languages, language: current }) =>
+          languages.map(lang => (
+            <button
+              key={lang}
+              className={`link ${lang === current ? "active" : ""}`}
+              onClick={() => changeLocale(lang)}
+            >
+              {lang}
+            </button>
+          ))
+        }
       </IntlContextConsumer>
     </>
   );
 };
-
-// const Language = () => {
-//   return (
-//     <ul className={"language"}>
-//       <IntlContextConsumer>
-//         {({ languages, language: currentLocale }) =>
-//           languages.map(lang => (
-//             <li key={lang} className={lang === currentLocale ? "active" : ""}>
-//               <a onClick={() => changeLocale(lang)}>{lang}</a>
-//             </li>
-//           ))
-//         }
-//       </IntlContextConsumer>
-//     </ul>
-//   );
-// };
 
 export default Language;

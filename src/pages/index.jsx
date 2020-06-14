@@ -1,16 +1,21 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql } from "gatsby";
+import { SocialData } from "../static-data";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Archive from "../components/archive";
 
 import "font-awesome/scss/font-awesome.scss";
 import "./index.scss";
 
 export const query = graphql`
   query($language: String!) {
-    allMarkdownRemark(filter: { fields: { lang: { eq: $language } } }) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { fields: { lang: { eq: $language } } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -37,16 +42,28 @@ const IndexPage = ({ intl, data }) => {
         lang={intl.locale.toString()}
         title={intl.formatMessage({ id: "pages.home" })}
       />
-      <div className="title">
-        <h3
+      <div className={"title"}>
+        <h1
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage({ id: "content.home.title" }),
           }}
         />
       </div>
-      <div className="body">
+      <div className={"body"}>
         <p>{intl.formatMessage({ id: "content.home.body" })}</p>
       </div>
+      <ul className={"icons"}>
+        {SocialData.map(key => (
+          <li key={key.name}>
+            <a
+              className={`link ${key.icon}`}
+              href={key.url}
+              title={key.name}
+            ></a>
+          </li>
+        ))}
+      </ul>
+      <Archive data={data} />
     </Layout>
   );
 };
