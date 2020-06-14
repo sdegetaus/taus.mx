@@ -24,6 +24,13 @@ export const query = graphql`
             author
             slug
             tags
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             lang
@@ -57,6 +64,7 @@ const IndexPage = ({ intl, data }) => {
           {SocialData.map(key => (
             <li key={key.name}>
               <a
+                aria-label="button"
                 className={`link ${key.icon}`}
                 href={key.url}
                 title={key.name}

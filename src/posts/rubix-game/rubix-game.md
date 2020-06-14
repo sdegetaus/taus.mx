@@ -4,6 +4,7 @@ date: "2020-06-19"
 title: "Rubix Game"
 author: "Santiago Degetau"
 tags: ["unity", "game development"]
+featuredImage: featured.png
 ---
 
 ![Rubix game](./featured.png)
