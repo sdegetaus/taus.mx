@@ -18,11 +18,11 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            title
             date
-            author
-            slug
+            title
+            url
             tags
+            category
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 800) {

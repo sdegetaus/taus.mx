@@ -1,9 +1,9 @@
 ---
-date: "2020-06-12"
-title: "The Third Gatsby Post"
-url: "www.google.com"
+date: "2020-06-19"
+title: "Rubix Game"
+url: "www.rubixgame.com/en"
 category: "Game Development"
-tags: ["hello", "world"]
+tags: ["Unity3D", "C#"]
 featuredImage: featured.png
 featuredImageAlt: "This is the alt text for the featured image"
 ---

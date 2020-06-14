@@ -1,9 +1,9 @@
 ---
-slug: "item-2"
-date: "2018-06-09"
+date: "2020-06-12"
 title: "The Third Gatsby Post"
-author: "Santiago Degetau"
+url: "https://www.google.com"
+category: "Game Development"
 tags: ["hello", "world"]
+featuredImage: featured.png
+featuredImageAlt: "This is the alt text for the featured image"
 ---
-
-This is my third post!
