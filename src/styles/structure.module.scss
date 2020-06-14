@@ -1,0 +1,35 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./media-queries.scss";
+
+.inner {
+  max-width: $SECTION_WIDTH;
+  padding: 0 60px;
+  width: 100%;
+
+  @include max-tablet {
+    padding: 0 40px;
+  }
+
+  @include max-mobile {
+    padding: 0 15px;
+  }
+}
+
+.section {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.vertical-space {
+  margin: 60px 0;
+
+  @include max-tablet {
+    margin: 40px 0;
+  }
+
+  @include max-mobile {
+    margin: 15px 0;
+  }
+}

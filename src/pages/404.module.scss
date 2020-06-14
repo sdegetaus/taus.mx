@@ -1,0 +1,31 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+._404 {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: $space-md;
+  h1 {
+    font-size: 125px;
+    line-height: 1;
+  }
+}
+
+.body {
+  margin-bottom: $space-lg;
+  p {
+    @include primary-font;
+    color: $primary-light;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+  }
+}

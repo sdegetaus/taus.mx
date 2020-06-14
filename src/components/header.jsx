@@ -2,12 +2,13 @@ import React from "react";
 import Menu from "./menu";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 
-import "./header.scss";
+import structStyles from "../styles/structure.module.scss";
+import headerStyles from "./header.module.scss";
 
 const Header = ({ intl }) => (
-  <header className="section">
-    <div className="inner">
-      <div className="logo">
+  <header className={`${headerStyles.header} ${structStyles.section}`}>
+    <div className={`${structStyles.inner}`}>
+      <div className={`${headerStyles.logo}`}>
         <Link
           to="/"
           title={`${intl.formatMessage({

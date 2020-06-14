@@ -1,16 +1,105 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
-
-@import "_variables.scss";
-@import "_media-queries.scss";
-@import "_mixins.scss";
-@import "_global.scss";
-// @import '_pages.scss';
-// @import '_template.scss';
+@import "_fonts.scss";
+@import "variables.scss";
+@import "media-queries.scss";
+@import "mixins.scss";
 
 body {
   @include primary-font;
   margin: 0;
   box-sizing: border-box;
   overflow-y: overlay;
+}
+
+::selection {
+  @include selection;
+}
+
+::-moz-selection {
+  @include selection;
+}
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+/* ----------------------------- */
+/* ----------- TEXTS ----------- */
+/* ----------------------------- */
+
+// all texts
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+i {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  text-decoration: none;
+}
+
+// headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  color: $text-headings;
+}
+
+// body texts
+p,
+span,
+strong,
+i {
+  color: $text-body;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  @include global-animation;
+  color: $primary-base;
+  text-decoration: none;
+  &:hover {
+    color: $accent-base;
+  }
+}
+
+/* ----------------------------- */
+/* ---------- BUTTONS ---------- */
+/* ----------------------------- */
+
+button {
+  @include global-animation;
+  cursor: pointer;
+  color: $primary-dark;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  background-color: transparent;
+  padding: 0;
+  border-width: 0px;
+  border-style: none;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: $accent-base;
+  }
 }

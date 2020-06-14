@@ -1,0 +1,54 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/media-queries";
+
+.menu {
+  height: 50px;
+  float: left;
+  width: 75%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include max-tablet {
+    width: 50%;
+  }
+}
+
+.nav {
+  @include max-tablet {
+    display: none;
+  }
+}
+
+.item {
+  display: inline-flex;
+  a {
+    cursor: pointer;
+    position: relative;
+    color: $primary-base;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: $accent-base;
+    }
+  }
+  &.lang a {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+.active {
+  color: $accent-base !important;
+  &:hover {
+    color: $accent-base;
+  }
+  &:after {
+    border-color: $accent-base;
+  }
+}

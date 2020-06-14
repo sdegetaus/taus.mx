@@ -2,17 +2,27 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 
+// global styles import
 import "normalize.css";
 import "../styles/style.scss";
 
+import structStyles from "../styles/structure.module.scss";
+import layoutStyles from "./layout.module.scss";
+
 const Layout = props => {
-  const { pageName, mainClass, innerClass, children } = props;
+  const { pageName, contentClass, mainClass, innerClass, children } = props;
   return (
     <>
-      <div id="content" className={pageName ?? ""}>
+      <div
+        className={`${layoutStyles.content} ${pageName ?? ""} ${
+          contentClass ?? ""
+        }`}
+      >
         <Header />
-        <main className={`section ${mainClass ?? ""}`}>
-          <div className={`inner ${innerClass ?? ""}`}>{children}</div>
+        <main className={`${structStyles.section} ${mainClass ?? ""}`}>
+          <div className={`${structStyles.inner} ${innerClass ?? ""}`}>
+            {children}
+          </div>
         </main>
       </div>
       <Footer />

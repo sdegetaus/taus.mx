@@ -1,0 +1,15 @@
+@import "../styles/media-queries.scss";
+@import "../styles/variables.scss";
+
+.content {
+  position: relative;
+  min-height: calc(100vh - #{$FOOTER_HEIGHT_DESKTOP});
+
+  @include max-tablet {
+    min-height: calc(100vh - #{$FOOTER_HEIGHT_TABLET});
+  }
+
+  @include max-mobile {
+    min-height: calc(100vh - #{$FOOTER_HEIGHT_MOBILE});
+  }
+}

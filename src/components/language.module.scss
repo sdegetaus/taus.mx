@@ -1,0 +1,16 @@
+@import "../styles/variables";
+@import "../styles/media-queries";
+
+.button {
+  text-transform: uppercase;
+  padding: $space-sm !important;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  color: $accent-base;
+  pointer-events: none;
+  cursor: default;
+}
