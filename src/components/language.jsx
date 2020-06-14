@@ -1,5 +1,6 @@
 import React from "react";
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl";
+import { LanguageName } from "../static-data";
 
 import "./language.scss";
 
@@ -13,6 +14,7 @@ const Language = () => {
               key={lang}
               className={`link ${lang === current ? "active" : ""}`}
               onClick={() => changeLocale(lang)}
+              title={LanguageName[lang]}
             >
               {lang}
             </button>

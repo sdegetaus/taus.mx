@@ -10,3 +10,8 @@ export const SocialData = [
     url: "https://github.com/sdegetaus",
   },
 ];
+
+export const LanguageName = {
+  en: "English",
+  es: "Español",
+};
