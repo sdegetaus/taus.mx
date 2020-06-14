@@ -14,7 +14,11 @@
   "content": {
     "home": {
       "title": "Hello, I am <strong>Santiago</strong>",
-      "body": "Graphic Designer, 3D Artist, Web & Game Developer and a Professional Hobbyist"
+      "body": "Graphic Designer, 3D Artist, Web & Game Developer and a Professional Hobbyist",
+      "cta": {
+        "title": "Want to get in touch?",
+        "body": "You can reach me at <strong>santiago@taus.mx</strong>"
+      }
     },
     "404": {
       "title": "404",

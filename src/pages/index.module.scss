@@ -51,3 +51,19 @@
     }
   }
 }
+
+.cta {
+  width: 100%;
+  // border-top: 1px solid $borders-light;
+  border-bottom: 1px solid $borders-light;
+  padding: $space-lg * 2 0;
+  h4 {
+    font-size: 35px;
+    margin-bottom: $space-xs;
+  }
+  p {
+    font-weight: 300;
+    @include primary-font;
+    color: $primary-light;
+  }
+}

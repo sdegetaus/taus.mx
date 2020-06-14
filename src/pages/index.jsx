@@ -74,6 +74,15 @@ const IndexPage = ({ intl, data }) => {
         </ul>
       </div>
       <Archive data={data} />
+      <div className={indexStyles.cta}>
+        <h4>{intl.formatMessage({ id: "content.home.cta.title" })}</h4>
+        <p
+          // onClick={() => document.execCommand("copy")}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: "content.home.cta.body" }),
+          }}
+        />
+      </div>
     </Layout>
   );
 };

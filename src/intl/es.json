@@ -14,7 +14,11 @@
   "content": {
     "home": {
       "title": "Hola, soy <strong>Santiago</strong>",
-      "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web"
+      "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web",
+      "cta": {
+        "title": "¿Necesitas contactarme?",
+        "body": "Puedes hacerlo a través de <strong>santiago@taus.mx</strong>"
+      }
     },
     "404": {
       "title": "404",
