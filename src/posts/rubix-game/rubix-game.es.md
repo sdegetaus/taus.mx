@@ -1,6 +1,6 @@
 ---
 date: "2020-06-19"
-title: "Rubix: Juego para iOS y Android"
+title: "Rubix: Juego de Lógica para iOS y Android"
 url: "www.rubixgame.com/es"
 category: "Game Development"
 tags: ["Unity", "C#", "iOS", "Android"]
