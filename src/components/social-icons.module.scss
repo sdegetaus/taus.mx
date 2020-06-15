@@ -7,13 +7,21 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  li:not(:last-child) {
-    margin-right: $space-sm;
+  li {
+    margin: 0 $space-sm / 2;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
   span {
     @include global-animation;
   }
   a {
+    display: flex;
+    align-items: center;
     font-size: 30px;
     &:hover span {
       color: $accent-base;

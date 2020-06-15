@@ -20,7 +20,7 @@
     font-size: 14px;
   }
   &:hover {
-    background-color: $bg-light;
+    background-color: darken($bg-light, 5%);
     span {
       color: $accent-base;
     }

@@ -1,0 +1,62 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/media-queries";
+
+$borderRadius: 3px;
+
+.inner {
+  max-width: 700px;
+}
+
+.body {
+  margin: $space-md 0 0 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border: 1px solid $borders-base;
+  background-color: lighten($bg-light, 2.2%);
+  //   box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15);
+  padding: $space-md * 2 $space-md $space-md * 2 $space-md;
+  border-radius: $borderRadius;
+  margin-bottom: $space-sm;
+}
+
+.bio {
+  h1 {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: $space-sm;
+    text-shadow: 0 1px 0 white;
+  }
+  p {
+    font-size: 14px;
+    color: $primary-light;
+    line-height: 2em;
+    margin-bottom: $space-sm;
+  }
+  .card-image {
+    width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: $space-md;
+    &,
+    img {
+      border: 1px solid $borders-base;
+    }
+    border-radius: 50%;
+    box-shadow: 0 2px 4px -2px rgba($primary-dark, 0.2);
+  }
+  .card-content {
+    width: 60%;
+  }
+  ul {
+    justify-content: start;
+  }
+}
+
+.card-image {
+  @include global-animation;
+}

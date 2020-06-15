@@ -5,12 +5,10 @@
 $borderRadius: 3px;
 
 .link {
-  // max-width: 502px;
-  // width: 100%;
   height: auto;
   display: block;
-  border: 1px solid $borders-base;
   border-radius: $borderRadius;
+  border: 1px solid $borders-base;
   box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15);
 
   @include max-tablet {

@@ -18,6 +18,10 @@
       "title": "Hola, soy",
       "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web"
     },
+    "about": {
+      "title": "Acerca de mí",
+      "bio": "[ES] Hello there! My name is <strong>Santiago Degetau</strong>, I am a twenty-something year old designer &amp; developer living in Mexico. I have over five years of work experience in graphic design, more than two years of programming know-how and an unlimited drive to learn and improve every day."
+    },
     "contact": {
       "title": "¿Necesitas contactarme?",
       "body": "Puedes hacerlo a través de"
