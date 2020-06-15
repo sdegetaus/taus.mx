@@ -12,6 +12,21 @@ $borderRadius: 3px;
   margin: $space-md 0 0 0;
 }
 
+.card-title {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: $space-sm;
+  text-shadow: 0 1px 0 white;
+}
+
+.card-body {
+  font-size: 14px;
+  color: $primary-light;
+  line-height: 2em;
+  margin-bottom: $space-sm;
+}
+
 .card {
   display: flex;
   align-items: center;
@@ -23,20 +38,11 @@ $borderRadius: 3px;
   margin-bottom: $space-sm;
 }
 
+.card-image {
+  @include global-animation;
+}
+
 .bio {
-  h1 {
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 24px;
-    margin-bottom: $space-sm;
-    text-shadow: 0 1px 0 white;
-  }
-  p {
-    font-size: 14px;
-    color: $primary-light;
-    line-height: 2em;
-    margin-bottom: $space-sm;
-  }
   .card-image {
     width: 200px;
     max-width: 200px;
@@ -57,6 +63,36 @@ $borderRadius: 3px;
   }
 }
 
-.card-image {
-  @include global-animation;
+.tech {
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  li {
+    $margin: 3px;
+    @include global-animation;
+    cursor: default;
+    background-color: lighten($borders-base, 6%);
+    color: $primary-light;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: $space-xs $space-sm;
+    border-radius: 2px;
+    line-height: 1em;
+    letter-spacing: 0.5px;
+    margin: $margin $margin $margin * 2 $margin;
+    margin-top: 0;
+    text-shadow: 0 1px 0 $borders-light;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: $borders-base;
+      color: $primary-dark;
+      transform: scale(1.03);
+    }
+  }
 }

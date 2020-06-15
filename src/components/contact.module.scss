@@ -11,9 +11,10 @@
     margin-bottom: $space-xs;
   }
   p {
-    font-weight: 300;
     @include primary-font;
+    font-weight: 300;
     color: $primary-light;
+    margin-bottom: $space-sm;
   }
   button {
     &,

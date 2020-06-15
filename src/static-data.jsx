@@ -28,3 +28,54 @@ export const Attributions = [
     href: "https://fontawesome.com/",
   },
 ];
+
+export const Technologies = [
+  {
+    title: "Unity 3D",
+    name: "Unity",
+  },
+  {
+    title: null,
+    name: "React.js",
+  },
+  {
+    title: null,
+    name: "Gatsby.js",
+  },
+  {
+    title: null,
+    name: "Node.js",
+  },
+  {
+    title: "WordPress",
+    name: "WordPress",
+  },
+  {
+    title: "Adobe Illustrator",
+    name: "Illustrator",
+  },
+  {
+    title: "Adobe Photoshop",
+    name: "Photoshop",
+  },
+  {
+    title: "Maxon Cinema 4D",
+    name: "Cinema 4D",
+  },
+  {
+    title: null,
+    name: "3D",
+  },
+  {
+    title: null,
+    name: "JavaScript",
+  },
+  {
+    title: "C-Sharp",
+    name: "C#",
+  },
+  {
+    title: null,
+    name: "PHP",
+  },
+];
