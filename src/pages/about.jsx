@@ -6,32 +6,24 @@ import Img from "gatsby-image";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Contact from "../components/contact";
+import Posts from "../components/posts";
 
 import aboutStyles from "./about.module.scss";
 import SocialIcons from "../components/social-icons";
 import { Technologies } from "../static-data";
 
-// Object.defineProperty(Array.prototype, "shuffle", {
-//   value: function () {
-//     for (let i = this.length - 1; i > 0; i--) {
-//       const j = Math.floor(Math.random() * (i + 1));
-//       [this[i], this[j]] = [this[j], this[i]];
-//     }
-//     return this;
-//   },
-// });
-
 const AboutPage = ({ intl }) => {
-  function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
+  // used to shuffle technology array
+  const shuffleArray = arr => {
+    let j, x, i;
+    for (i = arr.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));
-      x = a[i];
-      a[i] = a[j];
-      a[j] = x;
+      x = arr[i];
+      arr[i] = arr[j];
+      arr[j] = x;
     }
-    return a;
-  }
+    return arr;
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -55,7 +47,6 @@ const AboutPage = ({ intl }) => {
   `);
 
   const profileImage = data.images.edges[0].node;
-  console.log(profileImage);
 
   return (
     <Layout contentClass={aboutStyles.content} innerClass={aboutStyles.inner}>
@@ -81,14 +72,20 @@ const AboutPage = ({ intl }) => {
         </div>
         <div className={`${aboutStyles.card} ${aboutStyles.tech}`}>
           <div className={`${aboutStyles.cardContent}`}>
-            <h1 className={`${aboutStyles.cardTitle}`}>Technologies</h1>
+            <h2 className={`${aboutStyles.cardTitle}`}>Technologies</h2>
             <ul>
-              {shuffle(Technologies).map(tech => (
+              {shuffleArray(Technologies).map(tech => (
                 <li key={tech.name} title={tech.title ? tech.title : tech.name}>
                   {tech.name}
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+        <div className={`${aboutStyles.card} ${aboutStyles.posts}`}>
+          <div className={`${aboutStyles.cardContent}`}>
+            <h2 className={`${aboutStyles.cardTitle}`}>Posts</h2>
+            <Posts />
           </div>
         </div>
       </div>
