@@ -7,7 +7,7 @@
   align-items: baseline;
 }
 
-._404 {
+.main {
   text-align: center;
 }
 
@@ -15,7 +15,7 @@
   margin-bottom: $space-md;
   h1 {
     font-size: 125px;
-    line-height: 1;
+    line-height: 1em;
   }
 }
 

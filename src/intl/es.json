@@ -10,7 +10,8 @@
   "pages": {
     "home": "Inicio",
     "about": "Acerca",
-    "404": "404"
+    "404": "404",
+    "attributions": "Atribuciones"
   },
   "content": {
     "home": {

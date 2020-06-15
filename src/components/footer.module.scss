@@ -39,9 +39,6 @@
   align-items: center;
   a {
     font-weight: 400;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -49,4 +46,14 @@
   margin-right: 3px;
   font-size: 11px !important;
   margin-top: 2px;
+}
+
+.attributions {
+  color: $accent-base;
+  font-weight: 300 !important;
+  span {
+    color: $accent-base;
+    font-size: 12px;
+    margin-left: 5px;
+  }
 }

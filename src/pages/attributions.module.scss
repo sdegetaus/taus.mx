@@ -1,0 +1,46 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/media-queries";
+
+.main {
+  text-align: center;
+  margin: $space-md * 3 0 $space-md * 2 0;
+}
+
+.title {
+  margin-bottom: $space-md;
+  h1 {
+    font-size: 28px;
+    line-height: 1.5em;
+  }
+}
+
+.body {
+  p {
+    @include primary-font;
+    color: $primary-light;
+    font-size: 18px;
+    font-weight: 300;
+    @include max-mobile {
+      line-height: 1.3em;
+    }
+  }
+  ul {
+    border: 1px solid $borders-base;
+    border-radius: 2px;
+  }
+  li {
+    &:not(:last-child) {
+      border-bottom: 1px solid $borders-base;
+    }
+  }
+  button {
+    font-weight: 300;
+    width: 100%;
+    padding: $space-md;
+    display: flex;
+    &:hover {
+      background-color: lighten($bg-light, 3%);
+    }
+  }
+}

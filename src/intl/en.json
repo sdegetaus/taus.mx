@@ -10,7 +10,8 @@
   "pages": {
     "home": "Home",
     "about": "About",
-    "404": "404"
+    "404": "404",
+    "attributions": "Attributions"
   },
   "content": {
     "home": {

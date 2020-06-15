@@ -20,3 +20,11 @@ export const Email = {
   name: "santiago",
   domain: "taus.mx",
 };
+
+export const Attributions = [
+  // {
+  //   name: "g",
+  //   text: "Hello",
+  //   href: "",
+  // },
+];

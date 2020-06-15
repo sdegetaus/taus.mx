@@ -25,7 +25,11 @@ const Footer = ({ intl }) => {
             <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
             {new Date().getFullYear()}.&nbsp;
             <Link to="/">{data.site.siteMetadata.author}.</Link>&nbsp;
-            {intl.formatMessage({ id: "all_rights_reserved" })}.
+            {intl.formatMessage({ id: "all_rights_reserved" })}.&nbsp;
+            <Link to="/attributions" className={footerStyles.attributions}>
+              {intl.formatMessage({ id: "pages.attributions" })}
+              <span className={"fa fa-external-link"}></span>
+            </Link>
           </span>
         </div>
       </div>
