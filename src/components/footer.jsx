@@ -1,7 +1,6 @@
 import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
-import { Email } from "../static-data";
 
 import structStyles from "../styles/structure.module.scss";
 import footerStyles from "./footer.module.scss";

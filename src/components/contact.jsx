@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
+import { injectIntl } from "gatsby-plugin-intl";
 
 import { Email } from "../static-data";
 
@@ -13,8 +13,9 @@ const Contact = ({ intl }) => {
         {intl.formatMessage({ id: "content.contact.body" })}{" "}
         <button
           id={"email"}
-          onClick={() =>
-            (window.location.href = `mailto:${Email.name}@${Email.domain}}`)
+          onClick={() => {
+            window.location = `mailto:${Email.name}@${Email.domain}`;
+          }
           }
         >
           {Email.name}

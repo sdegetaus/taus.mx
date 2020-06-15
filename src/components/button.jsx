@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby-plugin-intl";
 
-import buttonStyles from "./button.module.scss";
+// import buttonStyles from "./button.module.scss";
 
 const Button = props => {
   const { to, children, title, icon } = props;

@@ -11,7 +11,7 @@ import Contact from "../components/contact";
 import indexStyles from "./index.module.scss";
 
 export const query = graphql`
-  query($language: String!) {
+  query ($language: String!) {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
       filter: { fields: { lang: { eq: $language } } }

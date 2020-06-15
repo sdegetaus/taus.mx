@@ -22,7 +22,6 @@ const Language = () => {
             >
               <span className="fa fa-globe"></span>
               {lang}
-              {/* {LanguageName[lang]} */}
             </button>
           ))
         }

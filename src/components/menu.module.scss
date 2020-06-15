@@ -37,6 +37,9 @@
       font-size: 20px;
     }
     &:hover {
+      span {
+        color: $accent-base;
+      }
       color: $accent-base;
     }
   }

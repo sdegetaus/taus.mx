@@ -1,9 +1,9 @@
 ---
 date: "2020-06-19"
-title: "Rubix Game"
+title: "Rubix: Game for iOS & Android"
 url: "www.rubixgame.com/en"
 category: "Game Development"
-tags: ["Unity3D", "C#"]
+tags: ["Unity", "C#", "iOS", "Android"]
 featuredImage: featured.png
-featuredImageAlt: "This is the alt text for the featured image"
+featuredImageAlt: "Rubix: cube-based puzzler available on the App Store & Play Store"
 ---
