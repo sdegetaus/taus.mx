@@ -31,8 +31,13 @@
       font-size: 65px;
     }
   }
-  strong {
+  a {
+    @include global-animation;
     font-weight: 500;
+    &:hover {
+      color: $accent-base;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -57,9 +62,13 @@
   li:not(:last-child) {
     margin-right: $space-sm;
   }
+  span {
+    @include global-animation;
+  }
   a {
     font-size: 30px;
-    &:hover {
+    &:hover span {
+      color: $accent-base;
       transform: translateY(-2px);
     }
   }

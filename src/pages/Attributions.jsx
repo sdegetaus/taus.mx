@@ -22,7 +22,15 @@ const Attributions = ({ intl }) => {
           <ul>
             {List.map(key => (
               <li key={key.name}>
-                <button>{key.text}</button>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={key.name}
+                  href={key.href}
+                  dangerouslySetInnerHTML={{
+                    __html: `<p>${key.text}</p><span class="fa fa-external-link"></span>`,
+                  }}
+                />
               </li>
             ))}
           </ul>

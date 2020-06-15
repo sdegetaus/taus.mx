@@ -1,6 +1,6 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { SocialData } from "../static-data";
 
 import SEO from "../components/seo";
@@ -11,7 +11,7 @@ import Contact from "../components/contact";
 import indexStyles from "./index.module.scss";
 
 export const query = graphql`
-  query ($language: String!) {
+  query($language: String!) {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
       filter: { fields: { lang: { eq: $language } } }
@@ -51,11 +51,10 @@ const IndexPage = ({ intl, data }) => {
       />
       <div className={indexStyles.content}>
         <div className={indexStyles.title}>
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: intl.formatMessage({ id: "content.home.title" }),
-            }}
-          />
+          <h1>
+            {intl.formatMessage({ id: "content.home.title" })}{" "}
+            <Link to={"/about"}>Santiago</Link>
+          </h1>
         </div>
         <div className={indexStyles.body}>
           <p>{intl.formatMessage({ id: "content.home.body" })}</p>
@@ -63,12 +62,9 @@ const IndexPage = ({ intl, data }) => {
         <ul className={indexStyles.icons}>
           {SocialData.map(key => (
             <li key={key.name}>
-              <a
-                className={`${key.icon}`}
-                href={key.url}
-                title={key.name}
-                aria-label={key.name}
-              ></a>
+              <a href={key.url} title={key.name} aria-label={key.name}>
+                <span className={`${key.icon}`}></span>
+              </a>
             </li>
           ))}
         </ul>

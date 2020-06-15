@@ -22,9 +22,9 @@ export const Email = {
 };
 
 export const Attributions = [
-  // {
-  //   name: "g",
-  //   text: "Hello",
-  //   href: "",
-  // },
+  {
+    name: "font-awesome",
+    text: "Icons from <strong>FontAwesome</strong>",
+    href: "https://fontawesome.com/",
+  },
 ];

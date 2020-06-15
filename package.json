@@ -36,7 +36,6 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
-    "eslint-config-react-app": "^5.2.1",
     "prettier": "^2.0.5"
   },
   "repository": {

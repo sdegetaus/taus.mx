@@ -30,16 +30,34 @@
     border-radius: 2px;
   }
   li {
+    width: 100%;
+    display: inline-flex;
+    text-align: left;
     &:not(:last-child) {
       border-bottom: 1px solid $borders-base;
     }
   }
-  button {
+  a {
     font-weight: 300;
     width: 100%;
     padding: $space-md;
     display: flex;
+    align-items: center;
+    p {
+      width: 100%;
+    }
+    span {
+      font-size: 13px;
+      margin-left: $space-md;
+      width: 100%;
+      text-align: end;
+    }
     &:hover {
+      p,
+      span,
+      strong {
+        color: $accent-base;
+      }
       background-color: lighten($bg-light, 3%);
     }
   }
