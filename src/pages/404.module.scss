@@ -29,3 +29,21 @@
     letter-spacing: 0.2px;
   }
 }
+
+.cta a {
+  @include global-animation;
+  padding: $space-sm $space-xs;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    @include global-animation;
+    margin-right: 10px;
+  }
+  &:hover {
+    span {
+      transform: translateX(-2px);
+      color: $accent-dark;
+    }
+  }
+}

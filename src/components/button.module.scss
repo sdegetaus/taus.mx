@@ -1,8 +1,6 @@
-// TO DECOUPLE
-
-/* ----------------------------- */
-/* ---------- BUTTONS ---------- */
-/* ----------------------------- */
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/media-queries.scss";
 
 .btn {
   @include global-animation;

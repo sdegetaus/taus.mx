@@ -3,6 +3,7 @@ import { injectIntl, Link } from "gatsby-plugin-intl";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Button from "../components/button";
 
 import _404Styles from "./404.module.scss";
 
@@ -19,16 +20,16 @@ const NotFoundPage = ({ intl }) => (
         }}
       />
     </div>
-    <div>
-      <Link
+    <div className={_404Styles.cta}>
+      <Button
         to="/"
         title={`${intl.formatMessage({
           id: "pages.home",
         })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
+        icon={"arrow-left"}
       >
-        <span className="fa fa-arrow-left"></span>
         {intl.formatMessage({ id: "return_home" })}
-      </Link>
+      </Button>
     </div>
   </Layout>
 );
