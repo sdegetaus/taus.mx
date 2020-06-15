@@ -29,14 +29,11 @@
 
 .meta {
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.4em;
   margin-bottom: 5px;
 }
 
 .copy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   a {
     font-weight: 400;
   }
@@ -45,7 +42,7 @@
 .copyright-icon {
   margin-right: 3px;
   font-size: 11px !important;
-  margin-top: 2px;
+  transform: translateY(-2px);
 }
 
 .attributions {

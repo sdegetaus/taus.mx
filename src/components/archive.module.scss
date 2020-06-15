@@ -19,7 +19,7 @@
   width: 100%;
   display: grid;
   grid-gap: $space-sm;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
 
   @include max-tablet {
     grid-template-columns: auto;
