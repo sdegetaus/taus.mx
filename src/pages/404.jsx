@@ -9,7 +9,7 @@ import _404Styles from "./404.module.scss";
 
 const NotFoundPage = ({ intl }) => (
   <Layout mainClass={_404Styles.main} contentClass={_404Styles.content}>
-    <SEO lang={intl.locale} title={intl.formatMessage({ id: "pages.404" })} />
+    <SEO title={intl.formatMessage({ id: "pages.404" })} />
     <div className={_404Styles.title}>
       <h1>{intl.formatMessage({ id: "content.404.title" })}</h1>
     </div>

@@ -1,6 +1,6 @@
 ---
 date: "2019-03-01"
-title: "SnowRacer: Endless Runner for Mobile"
+title: "SnowRacer: Endless-Runner for Mobile"
 url: "www.snowracergame.com"
 category: "Game Development"
 tags: ["Unity", "C#", "iOS", "Android"]

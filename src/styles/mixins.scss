@@ -16,6 +16,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
+@mixin awesome-font {
+  font-family: "FontAwesome";
+}
+
 @mixin the-placeholder {
   ::placeholder {
     @content;

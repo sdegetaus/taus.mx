@@ -51,6 +51,9 @@
 
 .active {
   color: $accent-base !important;
+  span {
+    color: $accent-base !important;
+  }
   &:hover {
     color: $accent-base;
     span {

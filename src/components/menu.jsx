@@ -16,14 +16,17 @@ const Menu = ({ intl }) => {
               title={intl.formatMessage({ id: "pages.home" })}
             >
               <span className="fa fa-home"></span>
-              {/* {intl.formatMessage({ id: "pages.home" })} */}
             </Link>
           </li>
-          {/* <li className={`${menuStyles.item}`}>
-            <Link to={`/about`} activeClassName={menuStyles.active}>
-              {intl.formatMessage({ id: "pages.about" })}
+          <li className={`${menuStyles.item}`}>
+            <Link
+              to={`/about`}
+              activeClassName={menuStyles.active}
+              title={intl.formatMessage({ id: "pages.about" })}
+            >
+              <span className="fa fa-question-circle"></span>
             </Link>
-          </li> */}
+          </li>
           <li className={`${menuStyles.item} ${menuStyles.language}`}>
             <Language />
           </li>

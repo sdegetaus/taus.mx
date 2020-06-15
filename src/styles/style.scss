@@ -85,6 +85,7 @@ a {
 /* ----------------------------- */
 
 button {
+  // remove default style
   @include global-animation;
   cursor: pointer;
   color: $primary-dark;

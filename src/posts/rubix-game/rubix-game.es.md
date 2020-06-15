@@ -5,5 +5,5 @@ url: "www.rubixgame.com/es"
 category: "Game Development"
 tags: ["Unity", "C#", "iOS", "Android"]
 featuredImage: featured.png
-featuredImageAlt: "This is the alt text for the featured image"
+featuredImageAlt: "Rubix: un juego de lógica innovador basado en el cubo de Rubik por BusyBytes "
 ---

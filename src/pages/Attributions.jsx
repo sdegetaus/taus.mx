@@ -10,10 +10,7 @@ import attributionsStyles from "./attributions.module.scss";
 const Attributions = ({ intl }) => {
   return (
     <Layout mainClass={attributionsStyles.main}>
-      <SEO
-        lang={intl.locale.toString()}
-        title={intl.formatMessage({ id: "pages.attributions" })}
-      />
+      <SEO title={intl.formatMessage({ id: "pages.attributions" })} />
       <div className={attributionsStyles.title}>
         <h1>{intl.formatMessage({ id: "pages.attributions" })}</h1>
       </div>

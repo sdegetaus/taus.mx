@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
-const SEO = (props) => {
-  const { intl, lang = "en", title, description, bodyClass, keywords } = props;
+const SEO = props => {
+  const { intl, title, description, bodyClass, keywords } = props;
   const query = useStaticQuery(graphql`
     query {
       site {
@@ -52,7 +52,7 @@ const SEO = (props) => {
     <Helmet
       bodyAttributes={{ class: bodyClass ?? "" }}
       htmlAttributes={{
-        lang,
+        lang: intl.locale,
       }}
       title={title}
       titleTemplate={`%s – ${intl.formatMessage({
