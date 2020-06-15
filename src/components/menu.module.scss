@@ -10,16 +10,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   @include max-tablet {
     width: 50%;
   }
 }
 
 .nav {
-  @include max-tablet {
-    display: none;
-  }
+  // @include max-tablet {
+  //   display: none;
+  // }
 }
 
 .item {
@@ -33,6 +32,10 @@
     padding: 10px 25px;
     display: flex;
     align-items: center;
+    span {
+      @include global-animation;
+      font-size: 20px;
+    }
     &:hover {
       color: $accent-base;
     }
@@ -47,8 +50,17 @@
   color: $accent-base !important;
   &:hover {
     color: $accent-base;
+    span {
+      color: $accent-base !important;
+    }
   }
   &:after {
     border-color: $accent-base;
+  }
+}
+
+.language {
+  button {
+    margin: 10px 0 10px 18px;
   }
 }

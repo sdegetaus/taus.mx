@@ -26,6 +26,7 @@ const NotFoundPage = ({ intl }) => (
           id: "pages.home",
         })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
       >
+        <span className="fa fa-arrow-left"></span>
         {intl.formatMessage({ id: "return_home" })}
       </Link>
     </div>

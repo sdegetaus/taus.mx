@@ -3,9 +3,10 @@ import { injectIntl } from "gatsby-plugin-intl";
 import { graphql } from "gatsby";
 import { SocialData } from "../static-data";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Layout from "../components/layout";
 import Archive from "../components/archive";
+import Contact from "../components/contact";
 
 import indexStyles from "./index.module.scss";
 
@@ -73,15 +74,7 @@ const IndexPage = ({ intl, data }) => {
         </ul>
       </div>
       <Archive data={data} />
-      <div className={indexStyles.cta}>
-        <h4>{intl.formatMessage({ id: "content.home.cta.title" })}</h4>
-        <p
-          // onClick={() => document.execCommand("copy")}
-          dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: "content.home.cta.body" }),
-          }}
-        />
-      </div>
+      <Contact />
     </Layout>
   );
 };

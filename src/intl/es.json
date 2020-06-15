@@ -9,16 +9,17 @@
   },
   "pages": {
     "home": "Inicio",
+    "about": "Acerca",
     "404": "404"
   },
   "content": {
     "home": {
       "title": "Hola, soy <strong>Santiago</strong>",
-      "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web",
-      "cta": {
-        "title": "¿Necesitas contactarme?",
-        "body": "Puedes hacerlo a través de <strong>santiago<span class=\"fa fa-at\"></span>taus.mx</strong>"
-      }
+      "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web"
+    },
+    "contact": {
+      "title": "¿Necesitas contactarme?",
+      "body": "Puedes hacerlo a través de"
     },
     "404": {
       "title": "404",

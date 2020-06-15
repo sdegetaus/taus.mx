@@ -13,12 +13,16 @@ const Language = () => {
             <button
               key={lang}
               className={`${languageStyles.button} ${
-                lang === current ? languageStyles.active : ""
+                lang === current
+                  ? languageStyles.active
+                  : languageStyles.notActive
               }`}
               onClick={() => changeLocale(lang)}
               title={LanguageName[lang]}
             >
+              <span className="fa fa-globe"></span>
               {lang}
+              {/* {LanguageName[lang]} */}
             </button>
           ))
         }

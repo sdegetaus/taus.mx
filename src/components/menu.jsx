@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl } from "gatsby-plugin-intl";
+import { injectIntl, Link } from "gatsby-plugin-intl";
 import Language from "./language";
 
 import menuStyles from "./menu.module.scss";
@@ -10,6 +10,21 @@ const Menu = ({ intl }) => {
       <nav className={`${menuStyles.nav}`}>
         <ul>
           <li className={`${menuStyles.item}`}>
+            <Link
+              to={`/`}
+              activeClassName={menuStyles.active}
+              title={intl.formatMessage({ id: "pages.home" })}
+            >
+              <span className="fa fa-home"></span>
+              {/* {intl.formatMessage({ id: "pages.home" })} */}
+            </Link>
+          </li>
+          {/* <li className={`${menuStyles.item}`}>
+            <Link to={`/about`} activeClassName={menuStyles.active}>
+              {intl.formatMessage({ id: "pages.about" })}
+            </Link>
+          </li> */}
+          <li className={`${menuStyles.item} ${menuStyles.language}`}>
             <Language />
           </li>
         </ul>

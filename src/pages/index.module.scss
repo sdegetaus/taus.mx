@@ -1,5 +1,6 @@
 @import "../styles/variables";
 @import "../styles/mixins";
+@import "../styles/media-queries.scss";
 
 .main {
   text-align: center;
@@ -13,13 +14,22 @@
 
 .content {
   margin: $space-md * 4 0 $space-md * 3 0;
+  @include max-mobile {
+    margin: $space-md * 3 0 $space-md * 2 0;
+  }
 }
 
 .title {
   margin-bottom: $space-sm;
+  @include max-tablet {
+    margin-bottom: $space-md;
+  }
   h1 {
     font-size: 76px;
-    line-height: 1;
+    line-height: 1em;
+    @include max-mobile {
+      font-size: 65px;
+    }
   }
   strong {
     font-weight: 500;
@@ -33,6 +43,9 @@
     color: $primary-light;
     font-size: 22px;
     font-weight: 300;
+    @include max-mobile {
+      line-height: 1.3em;
+    }
   }
 }
 
@@ -49,28 +62,5 @@
     &:hover {
       transform: translateY(-2px);
     }
-  }
-}
-
-.cta {
-  width: 100%;
-  padding: $space-lg * 2 0;
-  h4 {
-    font-size: 35px;
-    margin-bottom: $space-xs;
-  }
-  p {
-    font-weight: 300;
-    @include primary-font;
-    color: $primary-light;
-    strong {
-      font-weight: 300;
-      color: $accent-base;
-    }
-  }
-  span {
-    color: $accent-base;
-    margin: 0 1px;
-    font-size: 14px;
   }
 }

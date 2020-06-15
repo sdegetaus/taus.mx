@@ -5,6 +5,7 @@
 @mixin selection {
   color: white;
   background-color: $orange-base;
+  text-decoration-color: white;
 }
 
 @mixin primary-font {

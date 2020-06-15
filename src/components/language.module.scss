@@ -1,11 +1,29 @@
 @import "../styles/variables";
+@import "../styles/mixins";
 @import "../styles/media-queries";
 
 .button {
   text-transform: uppercase;
-  padding: $space-sm !important;
+  letter-spacing: 0.1px;
+  padding: $space-xs 9px !important;
+  font-size: 15px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: $primary-light;
+  background-color: $bg-light;
+  span {
+    @include global-animation;
+    color: $primary-light;
+    margin-right: 7px;
+    font-size: 14px;
+  }
   &:hover {
-    text-decoration: underline;
+    background-color: $bg-light;
+    span {
+      color: $accent-base;
+    }
   }
 }
 
@@ -13,4 +31,8 @@
   color: $accent-base;
   pointer-events: none;
   cursor: default;
+}
+
+.not-active {
+  display: flex;
 }

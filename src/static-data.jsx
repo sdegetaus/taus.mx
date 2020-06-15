@@ -15,3 +15,8 @@ export const LanguageName = {
   en: "English",
   es: "Español",
 };
+
+export const Email = {
+  name: "santiago",
+  domain: "taus.mx",
+};
