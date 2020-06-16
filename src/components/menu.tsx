@@ -7,13 +7,17 @@ import menuStyles from "./menu.module.scss";
 const Menu = ({ intl }) => {
   return (
     <div className={`${menuStyles.menu}`}>
-      <nav className={`${menuStyles.nav}`}>
+      <nav>
         <ul>
           <li className={`${menuStyles.item}`}>
             <Link
               to={`/`}
               activeClassName={menuStyles.active}
               title={intl.formatMessage({ id: "pages.home" })}
+              onClick={() => {
+                gtag("event", "test_event");
+                console.log("test_event");
+              }}
             >
               <span className="fa fa-home"></span>
             </Link>
