@@ -5,5 +5,5 @@ url: "www.rubixgame.com/en"
 category: "Game Development"
 tags: ["Unity", "C#", "iOS", "Android"]
 featuredImage: featured.png
-featuredImageAlt: "Rubix: cube-based puzzler by BusyBytes"
+featuredImageAlt: "Rubix: Engaging Rubik's Cube Remake by BusyBytes"
 ---

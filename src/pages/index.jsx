@@ -24,6 +24,7 @@ export const query = graphql`
             url
             tags
             category
+            featuredImageAlt
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 800) {

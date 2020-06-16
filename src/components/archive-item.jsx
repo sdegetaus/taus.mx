@@ -5,6 +5,7 @@ import archiveItemStyles from "./archive-item.module.scss";
 
 const ArchiveItem = props => {
   const { url, title, tags, featuredImage, featuredImageAlt } = props;
+console.log(props);
 
   return (
     <a
@@ -16,13 +17,15 @@ const ArchiveItem = props => {
         <Img
           className={archiveItemStyles.image}
           fluid={featuredImage.childImageSharp.fluid}
+          title={title}
           alt={featuredImageAlt}
         />
       ) : (
         <img
           className={archiveItemStyles.image}
           src="https://picsum.photos/505/285"
-          alt=""
+          title={title}
+          alt={title}
         />
       )}
     </a>
