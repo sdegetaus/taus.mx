@@ -36,6 +36,18 @@
 .copy {
   a {
     font-weight: 400;
+    &:hover {
+      text-decoration: underline;
+      sup {
+        color: $accent-light;
+      }
+    }
+  }
+  sup {
+    font-size: 8px;
+    color: $primary-light;
+    margin-left: 1px;
+    top: -1em;
   }
 }
 

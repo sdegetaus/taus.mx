@@ -19,8 +19,14 @@
       "body": "Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web"
     },
     "about": {
-      "title": "Acerca de Mí",
+      "title": "Acerca de mí",
       "bio": "¡Hola! Me llamo <strong>Santiago Degetau,</strong> soy un diseñador y programador de veinte y pico años mexicano. Desarrollo videojuegos, páginas web, y gráficos 2D y 3D.<br /> Trabajo en <strong><a target=\"_blank\" href=\"https://www.busybytes.mx\">BusyBytes GmbH<span class=\"fa fa-external-link\"></span></a></strong>"
+    },
+    "posts": {
+      "loading": "Cargando...",
+      "error": "¡No se encontraron los artículos!",
+      "title": "Últimos Artículos",
+      "see_all": "Ver Todos"
     },
     "contact": {
       "title": "¿Necesitas contactarme?",

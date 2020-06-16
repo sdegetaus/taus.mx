@@ -13,12 +13,8 @@ const Archive = props => {
       })}
     </div>
   ) : (
-    <div className={`${archiveStyles.noData}`}>
-      <h4>Nothing here!</h4>
-    </div>
+    <h4>Nothing here!</h4>
   );
 };
-
-// todo: add as alert!
 
 export default Archive;

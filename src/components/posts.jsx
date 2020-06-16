@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { injectIntl } from "gatsby-plugin-intl";
 
 import postsStyles from "./posts.module.scss";
 
-const Posts = () => {
+const Posts = ({ intl }) => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetch(
@@ -12,11 +13,17 @@ const Posts = () => {
       .then(resultData => {
         setPosts(resultData);
       })
-      .catch(e => console.log(e));
+      .catch(e => {
+        console.log(e);
+        setPosts([], { error: true });
+      });
   }, []);
 
   return (
-    <>
+    <div className={postsStyles.card}>
+      <h2 className={postsStyles.title}>
+        {intl.formatMessage({ id: "content.posts.title" })}
+      </h2>
       {posts && posts.length > 0 ? (
         <ul className={postsStyles.list}>
           {posts.map(post => (
@@ -29,7 +36,7 @@ const Posts = () => {
                 href={post.link}
               >
                 <div className={postsStyles.postTitle}>
-                  <h3
+                  <h5
                     dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                   />
                   <span className={postsStyles.postDate}>
@@ -45,11 +52,17 @@ const Posts = () => {
             </li>
           ))}
         </ul>
+      ) : posts.error ? (
+        <div className={`${postsStyles.alert} ${postsStyles.error}`}>
+          {intl.formatMessage({ id: "content.posts.error" })}
+        </div>
       ) : (
-        <div className={postsStyles.list}>Loading...</div>
+        <div className={`${postsStyles.alert} ${postsStyles.loading}`}>
+          {intl.formatMessage({ id: "content.posts.loading" })}
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default Posts;
+export default injectIntl(Posts);

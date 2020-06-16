@@ -27,6 +27,11 @@ export const Attributions = [
     text: "Icons from <strong>FontAwesome</strong>",
     href: "https://fontawesome.com/",
   },
+  {
+    name: "gatsby-js",
+    text: "Website created using <strong>Gatsby.js</strong>",
+    href: "https://www.gatsbyjs.org/",
+  },
 ];
 
 export const Technologies = [

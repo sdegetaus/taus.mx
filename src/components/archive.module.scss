@@ -2,25 +2,17 @@
 @import "../styles/media-queries";
 @import "../styles/mixins";
 
-.no-data {
-  width: 100%;
-  min-height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $error-dark;
-  h4 {
-    color: $error-dark;
-    font-size: 35px;
-  }
-}
-
 .archive {
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
+  border-bottom: 1px solid $borders-light;
+  padding-bottom: $space-md * 2;
 
   @include max-tablet {
     grid-template-columns: auto;
+  }
+  @include max-mobile {
+    padding-bottom: $space-md;
   }
 }

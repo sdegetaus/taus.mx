@@ -6,6 +6,11 @@
   text-align: center;
   width: 100%;
   padding: $space-lg * 2 0;
+
+  @include max-mobile {
+    padding: $space-lg 0;
+  }
+
   h4 {
     font-size: 35px;
     margin-bottom: $space-xs;

@@ -2,38 +2,59 @@
 @import "../styles/mixins";
 @import "../styles/media-queries";
 
+.card {
+  margin-top: $space-md * 2 + 10;
+  max-width: 550px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid $borders-base;
+
+  @include max-mobile {
+    margin-top: $space-md + 10;
+  }
+}
+
+.title {
+  font-size: 24px;
+  text-align: left;
+  margin: $space-md $space-md $space-xs $space-md;
+  @include max-mobile {
+    margin-right: $space-sm;
+    margin-left: $space-sm;
+  }
+}
+
 .list {
-  margin-top: $space-md;
-  padding: $space-sm 0;
+  padding-bottom: $space-sm;
 }
 
 .post {
   @include global-animation;
-  padding: 0 $space-sm;
-  margin-bottom: $space-md;
-  &:last-child {
-    margin-bottom: 0;
-    a {
-      border: 0;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  }
+  margin-bottom: $space-sm;
   a {
     @include global-animation;
-    margin-bottom: $space-lg;
     display: block;
+    padding: $space-sm $space-md 0;
+    @include max-mobile {
+      padding: $space-sm $space-sm 0;
+    }
   }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: $space-md;
+    a {
+      margin-bottom: 0;
+    }
+  }
+
   &:hover {
     a {
-      .post-title h3 {
+      .post-title h5 {
         color: $accent-base;
       }
       .post-date {
         color: lighten($accent-light, 20%);
-      }
-      .post-excerpt p {
-        color: $accent-light;
       }
     }
   }
@@ -43,15 +64,20 @@
   display: inline-flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
   margin-bottom: 10px;
-  line-height: 1em;
+  justify-content: left;
+  flex-wrap: wrap;
+  text-align: left;
+  line-height: 1.5em;
 
-  h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  h5 {
     @include global-animation;
     font-size: 18px;
-    color: darken($primary-light, 15%);
-    text-shadow: 0 1px 0 white;
+    color: $primary-light;
+    overflow: hidden;
   }
 }
 
@@ -64,9 +90,21 @@
 
 .post-excerpt p {
   @include global-animation;
-  letter-spacing: -0.15px;
-  font-size: 13px;
-  line-height: 1.5em;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+  line-height: 1.75em;
   text-align: justify;
   color: lighten($primary-light, 20%);
+}
+
+.alert {
+  text-align: left;
+  color: $error-dark;
+  margin: $space-md;
+  &.error {
+    color: $error-dark;
+  }
+  &.loading {
+    color: $accent-base;
+  }
 }

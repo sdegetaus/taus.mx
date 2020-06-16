@@ -12,6 +12,10 @@ $borderRadius: 3px;
   margin: $space-md * 3 0 0;
   border-bottom: 1px solid $borders-light;
   padding-bottom: $space-md * 3;
+  @include max-mobile {
+    margin: $space-md * 2 0 0;
+    padding-bottom: $space-md * 2;
+  }
 }
 
 .card-title {
@@ -20,6 +24,10 @@ $borderRadius: 3px;
   margin-bottom: $space-md;
   text-shadow: 0 1px 0 white;
   text-align: center;
+  @include max-mobile {
+    font-size: 50px;
+    margin-bottom: $space-sm;
+  }
 }
 
 .card-body {
@@ -29,6 +37,9 @@ $borderRadius: 3px;
   line-height: 2em;
   margin-bottom: $space-md * 2;
   letter-spacing: 0.1px;
+  @include max-mobile {
+    margin-bottom: $space-lg;
+  }
   a {
     &,
     span {
@@ -68,6 +79,7 @@ $borderRadius: 3px;
   border-radius: 50%;
   box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15%);
 }
+
 .card-content {
   width: 100%;
 }

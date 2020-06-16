@@ -5,8 +5,6 @@ import archiveItemStyles from "./archive-item.module.scss";
 
 const ArchiveItem = props => {
   const { url, title, featuredImage, featuredImageAlt } = props;
-  console.log(props);
-
   return (
     <a
       href={!new RegExp(/https?:\/\//).test(url) ? `https://${url}` : url}

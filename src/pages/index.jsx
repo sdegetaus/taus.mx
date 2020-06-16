@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import Archive from "../components/archive";
 import Contact from "../components/contact";
 import SocialIcons from "../components/social-icons";
+import Posts from "../components/posts";
 
 import indexStyles from "./index.module.scss";
 
@@ -60,6 +61,7 @@ const IndexPage = ({ intl, data }) => {
         <SocialIcons />
       </div>
       <Archive data={data} />
+      <Posts />
       <Contact />
     </Layout>
   );

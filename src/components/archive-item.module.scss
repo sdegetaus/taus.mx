@@ -12,8 +12,11 @@ $borderRadius: 3px;
   border: 1px solid $borders-base;
   box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15%);
   margin: $space-xs;
+
   @include max-tablet {
     max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   img {

@@ -22,6 +22,12 @@
       "title": "About Me",
       "bio": "Hello, there! My name is <strong>Santiago Degetau,</strong> I am a twenty-something year old designer &amp; developer living in Mexico. I develop videogames, websites, and 2D &amp; 3D graphics.<br /> I work at <strong><a target=\"_blank\" href=\"https://www.busybytes.com\">BusyBytes GmbH<span class=\"fa fa-external-link\"></span></a></strong>"
     },
+    "posts": {
+      "loading": "Loading...",
+      "error": "Couldn't fetch articles!",
+      "title": "Latest Articles",
+      "see_all": "See All"
+    },
     "contact": {
       "title": "Want to get in touch?",
       "body": "You can reach me at"

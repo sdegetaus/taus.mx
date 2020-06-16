@@ -22,13 +22,17 @@ const Footer = ({ intl }) => {
         <div className={`${footerStyles.meta}`}>
           <span className={`${footerStyles.copy}`}>
             <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
-            {new Date().getFullYear()}.&nbsp;
-            <Link to="/">{data.site.siteMetadata.author}.</Link>&nbsp;
-            {intl.formatMessage({ id: "all_rights_reserved" })}.&nbsp;
-            <Link to="/attributions" className={footerStyles.attributions}>
+            {new Date().getFullYear()}&nbsp;&ndash;&nbsp;
+            <Link to="/about">
+              {data.site.siteMetadata.author}
+              <sup className={"fa fa-question-circle"}></sup>
+            </Link>
+            {/* &nbsp;//&nbsp; */}
+            {/* {intl.formatMessage({ id: "all_rights_reserved" })}.&nbsp; */}
+            {/* <Link to="/attributions" className={footerStyles.attributions}>
               {intl.formatMessage({ id: "pages.attributions" })}
               <span className={"fa fa-external-link"}></span>
-            </Link>
+            </Link> */}
           </span>
         </div>
       </div>
