@@ -31,12 +31,22 @@
 .post {
   @include global-animation;
   margin-bottom: $space-sm;
+
   a {
     @include global-animation;
     display: block;
     padding: $space-sm $space-md 0;
     @include max-mobile {
       padding: $space-sm $space-sm 0;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: $space-md;
+    border-bottom: 1px solid $borders-light;
+    @include max-mobile {
+      padding-bottom: 0;
+      border: none;
     }
   }
 

@@ -3,19 +3,45 @@ import { injectIntl } from "gatsby-plugin-intl";
 
 import postsStyles from "./posts.module.scss";
 
+interface WPText {
+  rendered: string;
+}
+
+interface Post {
+  id: number;
+  title: WPText;
+  link: URL;
+  date: Date;
+  excerpt: WPText;
+  slug: string;
+}
+
+interface Posts {
+  postSet: Post[];
+  error: boolean;
+}
+
+const defaultPosts: Posts = {
+  postSet: [],
+  error: false,
+};
+
 const Posts = ({ intl }) => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(defaultPosts);
   useEffect(() => {
     fetch(
       `http://busybytes.com/wp-json/wp/v2/posts?author=3&_fields=id,title,link,date,excerpt,slug`
     )
       .then(response => response.json())
-      .then(resultData => {
-        setPosts(resultData);
+      .then((posts: Post[]) => {
+        setPosts({
+          postSet: posts,
+          error: false,
+        });
       })
       .catch(e => {
         console.log(e);
-        setPosts([], { error: true });
+        setPosts({ postSet: [], error: true });
       });
   }, []);
 
@@ -24,16 +50,21 @@ const Posts = ({ intl }) => {
       <h2 className={postsStyles.title}>
         {intl.formatMessage({ id: "content.posts.title" })}
       </h2>
-      {posts && posts.length > 0 ? (
+      {posts && posts.postSet.length > 0 ? (
         <ul className={postsStyles.list}>
-          {posts.map(post => (
+          {posts.postSet.map((post: Post) => (
             <li key={post.id} className={postsStyles.post}>
               <a
                 target="_blank"
                 rel="noreferrer"
-                aria-label={post.link}
-                title={post.title.rendered}
-                href={post.link}
+                aria-label={post.link.toString()}
+                title={
+                  new DOMParser().parseFromString(
+                    post.title.rendered,
+                    "text/html"
+                  ).body.innerHTML
+                }
+                href={post.link.toString()}
               >
                 <div className={postsStyles.postTitle}>
                   <h5
