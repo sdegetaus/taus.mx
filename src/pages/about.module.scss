@@ -64,35 +64,30 @@ $borderRadius: 3px;
 }
 
 .tech {
+  $margin: 3px;
   ul {
     display: inline-flex;
     flex-wrap: wrap;
+    margin: 0 -$margin;
   }
   li {
-    $margin: 3px;
     @include global-animation;
     cursor: default;
     background-color: lighten($borders-base, 6%);
     color: $primary-light;
-    text-transform: uppercase;
     font-size: 16px;
-    padding: $space-xs $space-sm;
+    padding: $space-xs $space-sm 10px;
     border-radius: 2px;
     line-height: 1em;
     letter-spacing: 0.5px;
     margin: $margin $margin $margin * 2 $margin;
     margin-top: 0;
     text-shadow: 0 1px 0 $borders-light;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
+    font-size: 18px;
+    font-weight: 300;
     &:hover {
       background-color: $borders-base;
       color: $primary-dark;
-      transform: scale(1.03);
     }
   }
 }

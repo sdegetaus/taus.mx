@@ -3,17 +3,25 @@
 @import "../styles/media-queries";
 
 .list {
-  //   border-left: 2px solid lighten($borders-base, 5%);
+  margin-top: $space-md;
+  padding: $space-sm 0;
 }
 
 .post {
   @include global-animation;
-  //   border-left: 3px solid $borders-base;
+  padding: 0 $space-sm;
+  margin-bottom: $space-md;
+  &:last-child {
+    margin-bottom: 0;
+    a {
+      border: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
   a {
     @include global-animation;
-    padding: $space-sm $space-sm;
-    padding-right: 0;
-    margin-bottom: $space-sm;
+    margin-bottom: $space-lg;
     display: block;
   }
   &:hover {
@@ -56,6 +64,7 @@
 
 .post-excerpt p {
   @include global-animation;
+  letter-spacing: -0.15px;
   font-size: 13px;
   line-height: 1.5em;
   text-align: justify;

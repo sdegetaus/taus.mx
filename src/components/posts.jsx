@@ -10,16 +10,16 @@ const Posts = () => {
     )
       .then(response => response.json())
       .then(resultData => {
-        console.log(resultData);
         setPosts(resultData);
       })
       .catch(e => console.log(e));
   }, []);
 
   return (
-    <ul className={postsStyles.list}>
+    <>
       {posts && posts.length > 0 ? (
-        posts?.map(post => (
+        <ul className={postsStyles.list}>
+          {posts.map(post => (
           <li key={post.id} className={postsStyles.post}>
             <a
               target="_blank"
@@ -41,11 +41,14 @@ const Posts = () => {
               />
             </a>
           </li>
-        ))
+          ))}
+        </ul>
       ) : (
-        <li></li>
+        <div className={postsStyles.list}>
+          Loading...
+        </div>
       )}
-    </ul>
+    </>
   );
 };
 
