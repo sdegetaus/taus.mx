@@ -28,7 +28,13 @@ const Footer = ({ intl }) => {
           >
             <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
             {new Date().getFullYear()}&nbsp;&ndash;&nbsp;
-            <Link to="/about">
+            <Link
+              to="/about"
+              activeStyle={{
+                pointerEvents: "none",
+                cursor: "default",
+              }}
+            >
               {data.site.siteMetadata.author}
               <sup className={"fa fa-question-circle"}></sup>
             </Link>
@@ -36,7 +42,10 @@ const Footer = ({ intl }) => {
             <Link
               to="/attributions"
               className={footerStyles.attributions}
-              activeStyle={{ cursor: "default" }}
+              activeStyle={{
+                pointerEvents: "none",
+                cursor: "default",
+              }}
             >
               {intl.formatMessage({ id: "pages.attributions" })}
               <span className={"fa fa-external-link"}></span>

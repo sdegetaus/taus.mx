@@ -30,7 +30,7 @@ const Posts = ({ intl }) => {
   const [posts, setPosts] = useState(defaultPosts);
   useEffect(() => {
     fetch(
-      `http://busybytes.com/wp-json/wp/v2/posts?author=3&_fields=id,title,link,date,excerpt,slug`
+      `https://busybytes.com/wp-json/wp/v2/posts?author=3&_fields=id,title,link,date,excerpt,slug`
     )
       .then(response => response.json())
       .then((posts: Post[]) => {
