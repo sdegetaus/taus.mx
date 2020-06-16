@@ -3,8 +3,7 @@ import Img from "gatsby-image";
 
 import archiveItemStyles from "./archive-item.module.scss";
 
-const ArchiveItem = props => {
-  const { url, title, featuredImage, featuredImageAlt } = props;
+const ArchiveItem = ({ url, title, featuredImage, featuredImageAlt }) => {
   return (
     <a
       href={!new RegExp(/https?:\/\//).test(url) ? `https://${url}` : url}

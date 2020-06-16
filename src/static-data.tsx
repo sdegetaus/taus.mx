@@ -1,25 +1,3 @@
-interface SocialKey {
-  name: string;
-  icon: string;
-  url: URL;
-}
-
-interface Email {
-  name: string;
-  domain: string;
-}
-
-interface Attribution {
-  name: string;
-  text: string;
-  url: URL;
-}
-
-interface Technology {
-  title: string;
-  name: string;
-}
-
 export const SocialData: SocialKey[] = [
   {
     name: "GitHub",
@@ -33,7 +11,7 @@ export const SocialData: SocialKey[] = [
   },
 ];
 
-export const LanguageName = {
+export const Languages: Languages = {
   en: "English",
   es: "Español",
 };

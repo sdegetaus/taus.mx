@@ -24,9 +24,9 @@ const Attributions = ({ intl }) => {
               <li key={key.name}>
                 <a
                   target="_blank"
-                  rel="noreferrer"
+                  rel="nofollow"
                   aria-label={key.name}
-                  href={key.href}
+                  href={key.url.toString()}
                   dangerouslySetInnerHTML={{
                     __html: `<p>${key.text}</p><span class="fa fa-external-link"></span>`,
                   }}

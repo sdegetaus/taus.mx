@@ -1,6 +1,6 @@
 import React from "react";
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl";
-import { LanguageName } from "../static-data";
+import { Languages } from "../static-data";
 
 import languageStyles from "./language.module.scss";
 
@@ -9,7 +9,7 @@ const Language = () => {
     <>
       <IntlContextConsumer>
         {({ languages, language: current }) =>
-          languages.map(lang => (
+          languages.map((lang: string) => (
             <button
               key={lang}
               className={`${languageStyles.button} ${
@@ -18,7 +18,7 @@ const Language = () => {
                   : languageStyles.notActive
               }`}
               onClick={() => changeLocale(lang)}
-              title={LanguageName[lang]}
+              title={Languages[lang]}
             >
               <span className="fa fa-globe"></span>
               {lang}

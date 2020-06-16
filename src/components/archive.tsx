@@ -4,7 +4,7 @@ import ArchiveItem from "./archive-item";
 
 import archiveStyles from "./archive.module.scss";
 
-const Archive = props => {
+const Archive = (props: any) => {
   const nodes = props.data.allMarkdownRemark.edges;
   return nodes.length > 0 ? (
     <div className={archiveStyles.archive}>

@@ -3,8 +3,7 @@ import { Link } from "gatsby-plugin-intl";
 
 // import buttonStyles from "./button.module.scss";
 
-const Button = props => {
-  const { to, children, title, icon } = props;
+const Button = ({ to, children, title, icon }) => {
   return (
     <Link to={to} title={title}>
       {icon ? <span className={`fa fa-${icon}`}></span> : ""}

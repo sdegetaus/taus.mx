@@ -10,8 +10,13 @@ import "font-awesome/scss/font-awesome.scss";
 import structStyles from "../styles/structure.module.scss";
 import layoutStyles from "./layout.module.scss";
 
-const Layout = props => {
-  const { pageName, contentClass, mainClass, innerClass, children } = props;
+const Layout = ({
+  pageName = "",
+  contentClass = "",
+  mainClass = "",
+  innerClass = "",
+  children,
+}) => {
   return (
     <>
       <div
