@@ -7,6 +7,10 @@
   margin: $space-md * 2 0 $space-md * 2 0;
 }
 
+.inner {
+  max-width: 500px;
+}
+
 .title {
   margin-bottom: $space-md;
   h1 {

@@ -68,7 +68,7 @@ export const Technologies = [
   },
   {
     title: null,
-    name: "JavaScript",
+    name: "Javascript",
   },
   {
     title: "C-Sharp",
@@ -80,10 +80,34 @@ export const Technologies = [
   },
   {
     title: null,
-    name: "WooCommerce"
+    name: "WooCommerce",
   },
   {
     title: null,
-    name: "SEO"
-  }
+    name: "SEO",
+  },
+  {
+    title: null,
+    name: "TypeScript",
+  },
+  {
+    title: null,
+    name: "Sass",
+  },
+  {
+    title: null,
+    name: "GraphQL",
+  },
+  {
+    title: "Markup Language",
+    name: "HTML5",
+  },
+  {
+    title: "Rust Language",
+    name: "Rust",
+  },
+  {
+    title: null,
+    name: "SQL",
+  },
 ];

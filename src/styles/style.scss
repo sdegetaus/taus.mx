@@ -36,7 +36,7 @@ h5,
 h6,
 p,
 i {
-  font-family: "Oswald", sans-serif;
+  @include primary-font;
   margin: 0;
   text-decoration: none;
 }
@@ -61,7 +61,7 @@ i {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }
 
 ul,

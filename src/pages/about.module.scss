@@ -10,53 +10,66 @@ $borderRadius: 3px;
 
 .body {
   margin: $space-md * 3 0 0;
+  border-bottom: 1px solid $borders-light;
+  padding-bottom: $space-md * 3;
 }
 
 .card-title {
   width: 100%;
-  text-transform: capitalize;
-  font-size: 75px;
-  margin-bottom: $space-sm;
+  font-size: 90px;
+  margin-bottom: $space-md;
   text-shadow: 0 1px 0 white;
   text-align: center;
 }
 
 .card-body {
-  letter-spacing: -0.1px;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: $primary-light;
   line-height: 2em;
-  margin-bottom: $space-lg;
+  margin-bottom: $space-md * 2;
+  letter-spacing: 0.1px;
+  a {
+    &,
+    span {
+      color: $accent-base;
+    }
+    span {
+      font-size: 13px;
+      margin-left: 4px;
+    }
+    &:hover {
+      &,
+      span {
+        color: $accent-dark;
+      }
+    }
+  }
 }
 
 .card {
   display: flex;
   align-items: center;
-  padding: $space-md 0;
-  margin-bottom: $space-sm;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-image {
   @include global-animation;
+  max-width: 125px;
+  max-height: 125px;
+  width: 100%;
+  height: auto;
+  margin-bottom: $space-md;
+  &,
+  img {
+    border: 1px solid $borders-base;
+  }
+  border-radius: 50%;
+  box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15%);
 }
-
-.bio {
-  .card-image {
-    width: 200px;
-    max-width: 200px;
-    max-height: 200px;
-    margin-right: $space-md;
-    &,
-    img {
-      border: 1px solid $borders-base;
-    }
-    border-radius: 50%;
-    box-shadow: 0 2px 4px -2px rgba($primary-dark, 0.2);
-  }
-  .card-content {
-    width: 100%;
-  }
+.card-content {
+  width: 100%;
 }
 
 .tags {

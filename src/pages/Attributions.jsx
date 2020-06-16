@@ -9,7 +9,10 @@ import attributionsStyles from "./attributions.module.scss";
 
 const Attributions = ({ intl }) => {
   return (
-    <Layout mainClass={attributionsStyles.main}>
+    <Layout
+      mainClass={attributionsStyles.main}
+      innerClass={attributionsStyles.inner}
+    >
       <SEO title={intl.formatMessage({ id: "pages.attributions" })} />
       <div className={attributionsStyles.title}>
         <h1>{intl.formatMessage({ id: "pages.attributions" })}</h1>

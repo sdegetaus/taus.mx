@@ -4,8 +4,8 @@ import Img from "gatsby-image";
 import archiveItemStyles from "./archive-item.module.scss";
 
 const ArchiveItem = props => {
-  const { url, title, tags, featuredImage, featuredImageAlt } = props;
-console.log(props);
+  const { url, title, featuredImage, featuredImageAlt } = props;
+  console.log(props);
 
   return (
     <a

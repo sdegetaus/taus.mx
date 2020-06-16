@@ -10,8 +10,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "preview": "gatsby build && http-server public"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@types/react-helmet": "^6.0.0",

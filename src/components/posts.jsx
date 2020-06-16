@@ -20,33 +20,33 @@ const Posts = () => {
       {posts && posts.length > 0 ? (
         <ul className={postsStyles.list}>
           {posts.map(post => (
-          <li key={post.id} className={postsStyles.post}>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              aria-label={post.link}
-              title={post.title.rendered}
-              href={post.link}
-            >
-              <div className={postsStyles.postTitle}>
-                <h3 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                <span className={postsStyles.postDate}>
-                  {new Date(post.date).toLocaleDateString("de-DE")}
-                </span>
-              </div>
+            <li key={post.id} className={postsStyles.post}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label={post.link}
+                title={post.title.rendered}
+                href={post.link}
+              >
+                <div className={postsStyles.postTitle}>
+                  <h3
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  />
+                  <span className={postsStyles.postDate}>
+                    {new Date(post.date).toLocaleDateString("de-DE")}
+                  </span>
+                </div>
 
-              <div
-                className={postsStyles.postExcerpt}
-                dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-              />
-            </a>
-          </li>
+                <div
+                  className={postsStyles.postExcerpt}
+                  dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                />
+              </a>
+            </li>
           ))}
         </ul>
       ) : (
-        <div className={postsStyles.list}>
-          Loading...
-        </div>
+        <div className={postsStyles.list}>Loading...</div>
       )}
     </>
   );

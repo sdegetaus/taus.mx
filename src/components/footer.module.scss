@@ -48,6 +48,9 @@
 .attributions {
   color: $accent-base;
   font-weight: 300 !important;
+  &:hover {
+    text-decoration: underline;
+  }
   span {
     color: $accent-base;
     font-size: 12px;
