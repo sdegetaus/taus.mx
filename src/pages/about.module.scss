@@ -50,6 +50,7 @@ $borderRadius: 3px;
       margin-left: 4px;
     }
     &:hover {
+      text-decoration: underline;
       &,
       span {
         color: $accent-dark;
