@@ -78,4 +78,12 @@ export const Technologies = [
     title: null,
     name: "PHP",
   },
+  {
+    title: null,
+    name: "WooCommerce"
+  },
+  {
+    title: null,
+    name: "SEO"
+  }
 ];
