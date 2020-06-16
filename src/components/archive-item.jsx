@@ -25,17 +25,6 @@ const ArchiveItem = props => {
           alt=""
         />
       )}
-
-      <div className={`${archiveItemStyles.metadata}`}>
-        <div>
-          <h3 className={`${archiveItemStyles.title}`}>{title}</h3>
-          <div className={`${archiveItemStyles.tags}`}>
-            <i className={`${archiveItemStyles.tagsIcon} fa fa-tags`}></i>
-            {tags.join(", ")}
-          </div>
-        </div>
-        <i className={`${archiveItemStyles.linkIcon} fa fa-external-link`}></i>
-      </div>
     </a>
   );
 };

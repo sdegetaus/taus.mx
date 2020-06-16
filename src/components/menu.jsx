@@ -18,15 +18,6 @@ const Menu = ({ intl }) => {
               <span className="fa fa-home"></span>
             </Link>
           </li>
-          <li className={`${menuStyles.item}`}>
-            <Link
-              to={`/about`}
-              activeClassName={menuStyles.active}
-              title={intl.formatMessage({ id: "pages.about" })}
-            >
-              <span className="fa fa-question-circle"></span>
-            </Link>
-          </li>
           <li className={`${menuStyles.item} ${menuStyles.language}`}>
             <Language />
           </li>

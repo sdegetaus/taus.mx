@@ -21,6 +21,8 @@ $borderRadius: 3px;
 }
 
 .card-body {
+  letter-spacing: -0.1px;
+  text-align: justify;
   font-size: 14px;
   color: $primary-light;
   line-height: 2em;
@@ -30,11 +32,10 @@ $borderRadius: 3px;
 .card {
   display: flex;
   align-items: center;
-  border: 1px solid $borders-base;
-  background-color: lighten($bg-light, 2.2%);
-  //   box-shadow: 0 2px 5px -3px rgba($bg-base, 0.15);
-  padding: $space-md * 2 $space-md $space-md * 2 $space-md;
-  border-radius: $borderRadius;
+  // border: 1px solid $borders-base;
+  // background-color: lighten($bg-light, 2.2%);
+  // border-radius: $borderRadius;
+  padding: $space-md 0;
   margin-bottom: $space-sm;
 }
 
@@ -56,7 +57,7 @@ $borderRadius: 3px;
     box-shadow: 0 2px 4px -2px rgba($primary-dark, 0.2);
   }
   .card-content {
-    width: 60%;
+    width: 100%;
   }
   ul {
     justify-content: start;
