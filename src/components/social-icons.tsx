@@ -3,13 +3,13 @@ import { SocialData } from "../static-data";
 
 import socialIconsStyles from "./social-icons.module.scss";
 
-const SocialIcons = ({ iconSize }) => {
+const SocialIcons = ({ iconSize = 30 }) => {
   return (
     <ul className={socialIconsStyles.social}>
       {SocialData.map(key => (
         <li key={key.name}>
           <a
-            href={key.url}
+            href={key.url.toString()}
             title={key.name}
             aria-label={key.name}
             style={{ fontSize: iconSize }}

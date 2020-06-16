@@ -1,13 +1,35 @@
-export const SocialData = [
+interface SocialKey {
+  name: string;
+  icon: string;
+  url: URL;
+}
+
+interface Email {
+  name: string;
+  domain: string;
+}
+
+interface Attribution {
+  name: string;
+  text: string;
+  url: URL;
+}
+
+interface Technology {
+  title: string;
+  name: string;
+}
+
+export const SocialData: SocialKey[] = [
   {
     name: "GitHub",
     icon: "fa fa-github",
-    url: "https://github.com/sdegetaus",
+    url: new URL("https://github.com/sdegetaus"),
   },
   {
     name: "Instagram",
     icon: "fa fa-instagram",
-    url: "https://instagram.com/santiago.degetau",
+    url: new URL("https://instagram.com/santiago.degetau"),
   },
 ];
 
@@ -16,36 +38,37 @@ export const LanguageName = {
   es: "Español",
 };
 
-export const Email = {
+export const Email: Email = {
   name: "santiago",
   domain: "taus.mx",
 };
 
-export const Attributions = [
+export const Attributions: Attribution[] = [
   {
     name: "font-awesome",
     text: "Icons from <strong>FontAwesome</strong>",
-    href: "https://fontawesome.com/",
+    url: new URL("https://fontawesome.com/"),
   },
   {
     name: "gatsby-js",
     text: "Website created using <strong>Gatsby.js</strong>",
-    href: "https://www.gatsbyjs.org/",
+    url: new URL("https://www.gatsbyjs.org/"),
   },
   {
     name: "isometric-macbook",
     text: "MacBook Pro mockup by <strong>Shakuro</strong>",
-    href:
-      "https://dribbble.com/shots/3657246-FREE-isometric-MacBook-Pro-15-mockup",
+    url: new URL(
+      "https://dribbble.com/shots/3657246-FREE-isometric-MacBook-Pro-15-mockup"
+    ),
   },
   {
     name: "realistic-frame",
     text: "Frame vector created by <strong>freepik</strong>",
-    href: "https://www.freepik.com/free-photos-vectors/frame",
+    url: new URL("https://www.freepik.com/free-photos-vectors/frame"),
   },
 ];
 
-export const Technologies = [
+export const Technologies: Technology[] = [
   {
     title: "Unity 3D",
     name: "Unity",

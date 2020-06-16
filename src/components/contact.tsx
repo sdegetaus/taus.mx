@@ -2,7 +2,7 @@ import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 import { Email } from "../static-data";
 
-import SocialIcons from "../components/social-icons";
+import SocialIcons from "./social-icons";
 
 import contactStyles from "./contact.module.scss";
 
@@ -15,7 +15,7 @@ const Contact = ({ intl }) => {
         <button
           id={"email"}
           onClick={() => {
-            window.location = `mailto:${Email.name}@${Email.domain}`;
+            window.location.href = `mailto:${Email.name}@${Email.domain}`;
           }}
         >
           {Email.name}
