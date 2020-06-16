@@ -5,36 +5,34 @@
 $borderRadius: 3px;
 
 .inner {
-  max-width: 700px;
+  max-width: 550px;
 }
 
 .body {
-  margin: $space-md 0 0 0;
+  margin: $space-md * 3 0 0;
 }
 
 .card-title {
   width: 100%;
-  text-transform: uppercase;
-  font-size: 24px;
+  text-transform: capitalize;
+  font-size: 75px;
   margin-bottom: $space-sm;
   text-shadow: 0 1px 0 white;
+  text-align: center;
 }
 
 .card-body {
   letter-spacing: -0.1px;
-  text-align: justify;
-  font-size: 14px;
+  text-align: center;
+  font-size: 16px;
   color: $primary-light;
   line-height: 2em;
-  margin-bottom: $space-sm;
+  margin-bottom: $space-lg;
 }
 
 .card {
   display: flex;
   align-items: center;
-  // border: 1px solid $borders-base;
-  // background-color: lighten($bg-light, 2.2%);
-  // border-radius: $borderRadius;
   padding: $space-md 0;
   margin-bottom: $space-sm;
 }
@@ -59,18 +57,14 @@ $borderRadius: 3px;
   .card-content {
     width: 100%;
   }
-  ul {
-    justify-content: start;
-  }
 }
 
-.tech {
+.tags {
   $margin: 3px;
-  ul {
-    display: inline-flex;
-    flex-wrap: wrap;
-    margin: 0 -$margin;
-  }
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -$margin;
   li {
     @include global-animation;
     cursor: default;
@@ -90,11 +84,5 @@ $borderRadius: 3px;
       background-color: $borders-base;
       color: $primary-dark;
     }
-  }
-}
-
-.posts {
-  .card-content {
-    width: 100%;
   }
 }

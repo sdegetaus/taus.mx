@@ -25,38 +25,38 @@ const AboutPage = ({ intl }) => {
     return arr;
   };
 
-  const data = useStaticQuery(graphql`
-    query {
-      images: allFile(
-        filter: {
-          internal: { mediaType: { regex: "/image/" } }
-          base: { eq: "santiago-degetau.jpg" }
-        }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              fluid(maxWidth: 200) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     images: allFile(
+  //       filter: {
+  //         internal: { mediaType: { regex: "/image/" } }
+  //         base: { eq: "santiago-degetau.jpg" }
+  //       }
+  //     ) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             fluid(maxWidth: 200) {
+  //               ...GatsbyImageSharpFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
-  const profileImage = data.images.edges[0].node;
+  // const profileImage = data.images.edges[0].node;
 
   return (
     <Layout contentClass={aboutStyles.content} innerClass={aboutStyles.inner}>
       <SEO title={intl.formatMessage({ id: "pages.about" })} />
       <div className={aboutStyles.body}>
         <div className={`${aboutStyles.card} ${aboutStyles.bio}`}>
-          <Img
+          {/* <Img
             fluid={profileImage.childImageSharp.fluid}
             className={`${aboutStyles.cardImage}`}
-          />
+          /> */}
           <div className={`${aboutStyles.cardContent}`}>
             <h1 className={`${aboutStyles.cardTitle}`}>
               {intl.formatMessage({ id: "content.about.title" })}
@@ -67,13 +67,7 @@ const AboutPage = ({ intl }) => {
                 __html: intl.formatMessage({ id: "content.about.bio" }),
               }}
             />
-            <SocialIcons iconSize={26} />
-          </div>
-        </div>
-        <div className={`${aboutStyles.card} ${aboutStyles.tech}`}>
-          <div className={`${aboutStyles.cardContent}`}>
-            <h2 className={`${aboutStyles.cardTitle}`}>Technologies</h2>
-            <ul>
+            <ul className={aboutStyles.tags}>
               {shuffleArray(Technologies).map(tech => (
                 <li key={tech.name} title={tech.title ? tech.title : tech.name}>
                   {tech.name}
@@ -82,12 +76,12 @@ const AboutPage = ({ intl }) => {
             </ul>
           </div>
         </div>
-        <div className={`${aboutStyles.card} ${aboutStyles.posts}`}>
+        {/* <div className={`${aboutStyles.card} ${aboutStyles.posts}`}>
           <div className={`${aboutStyles.cardContent}`}>
             <h2 className={`${aboutStyles.cardTitle}`}>Posts</h2>
             <Posts />
           </div>
-        </div>
+        </div> */}
       </div>
       <Contact />
     </Layout>
