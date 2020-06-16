@@ -51,10 +51,8 @@
   &:hover {
     a {
       .post-title h5 {
-        color: $accent-base;
-      }
-      .post-date {
-        color: lighten($accent-light, 20%);
+        color: $accent-dark;
+        text-decoration: underline;
       }
     }
   }
@@ -76,15 +74,16 @@
   h5 {
     @include global-animation;
     font-size: 18px;
-    color: $primary-light;
+    font-weight: 300;
     overflow: hidden;
+    color: $accent-base;
   }
 }
 
 .post-date {
   @include global-animation;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 13px;
   color: lighten($primary-light, 30%);
 }
 

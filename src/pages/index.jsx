@@ -52,7 +52,14 @@ const IndexPage = ({ intl, data }) => {
         <div className={indexStyles.title}>
           <h1>
             {intl.formatMessage({ id: "content.home.title" })}{" "}
-            <Link to={"/about"}>Santiago</Link>
+            <Link
+              to={"/about"}
+              title={`${intl.formatMessage({
+                id: "pages.about",
+              })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
+            >
+              Santiago
+            </Link>
           </h1>
         </div>
         <div className={indexStyles.body}>

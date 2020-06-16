@@ -34,6 +34,7 @@
 }
 
 .copy {
+  cursor: default;
   a {
     font-weight: 400;
     &:hover {
@@ -59,8 +60,7 @@
 
 .attributions {
   color: $accent-base;
-  font-weight: 300 !important;
-  &:hover {
+  mar &:hover {
     text-decoration: underline;
   }
   span {

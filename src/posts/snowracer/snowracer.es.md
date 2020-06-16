@@ -1,6 +1,6 @@
 ---
 date: "2019-03-01"
-title: "Snowracer: corredor sin fin para iOS y Android"
+title: "Snowracer: Corredor sin fin para iOS y Android"
 url: "www.snowracergame.com"
 category: "Game Development"
 tags: ["Unity", "C#", "iOS", "Android"]

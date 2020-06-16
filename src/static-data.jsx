@@ -32,6 +32,17 @@ export const Attributions = [
     text: "Website created using <strong>Gatsby.js</strong>",
     href: "https://www.gatsbyjs.org/",
   },
+  {
+    name: "isometric-macbook",
+    text: "MacBook Pro mockup by <strong>Shakuro</strong>",
+    href:
+      "https://dribbble.com/shots/3657246-FREE-isometric-MacBook-Pro-15-mockup",
+  },
+  {
+    name: "realistic-frame",
+    text: "Frame vector created by <strong>freepik</strong>",
+    href: "https://www.freepik.com/free-photos-vectors/frame",
+  },
 ];
 
 export const Technologies = [
