@@ -9,7 +9,13 @@ const Archive = (props: any) => {
   return nodes.length > 0 ? (
     <div className={archiveStyles.archive}>
       {nodes.map(({ node }) => {
-        return <ArchiveItem key={node.fields.key} {...node.frontmatter} />;
+        return (
+          <ArchiveItem
+            key={node.fields.key}
+            id={node.fields.key}
+            {...node.frontmatter}
+          />
+        );
       })}
     </div>
   ) : (

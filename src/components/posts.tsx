@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { injectIntl } from "gatsby-plugin-intl";
+import Analytics, { Events } from "../analytics";
 
 import postsStyles from "./posts.module.scss";
 
@@ -55,6 +56,12 @@ const Posts = ({ intl }) => {
           {posts.postSet.map((post: Post) => (
             <li key={post.id} className={postsStyles.post}>
               <a
+                onClick={() =>
+                  Analytics.logEventWithParams(
+                    Events.click_blog_post,
+                    post.slug
+                  )
+                }
                 target="_blank"
                 rel="noreferrer"
                 aria-label={post.link.toString()}

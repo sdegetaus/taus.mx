@@ -14,10 +14,6 @@ const Menu = ({ intl }) => {
               to={`/`}
               activeClassName={menuStyles.active}
               title={intl.formatMessage({ id: "pages.home" })}
-              onClick={() => {
-                gtag("event", "test_event");
-                console.log("test_event");
-              }}
             >
               <span className="fa fa-home"></span>
             </Link>

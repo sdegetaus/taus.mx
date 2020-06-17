@@ -1,6 +1,7 @@
 import React from "react";
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl";
 import { Languages } from "../static-data";
+import Analytics, { Events } from "../analytics";
 
 import languageStyles from "./language.module.scss";
 
@@ -17,7 +18,10 @@ const Language = () => {
                   ? languageStyles.active
                   : languageStyles.notActive
               }`}
-              onClick={() => changeLocale(lang)}
+              onClick={() => {
+                Analytics.logEventWithParams(Events.change_languge, lang);
+                changeLocale(lang);
+              }}
               title={Languages[lang]}
             >
               <span className="fa fa-globe"></span>

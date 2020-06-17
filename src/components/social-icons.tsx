@@ -1,5 +1,6 @@
 import React from "react";
 import { SocialData } from "../static-data";
+import Analytics, { Events } from "../analytics";
 
 import socialIconsStyles from "./social-icons.module.scss";
 
@@ -13,6 +14,9 @@ const SocialIcons = ({ iconSize = 30 }) => {
             title={key.name}
             aria-label={key.name}
             style={{ fontSize: iconSize }}
+            onClick={() =>
+              Analytics.logEventWithParams(Events.click_social, key.name)
+            }
           >
             <span className={`${key.icon}`}></span>
           </a>
