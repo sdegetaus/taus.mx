@@ -20,8 +20,7 @@ export default class Analytics {
     // @ts-ignore
     gtag("event", action, {
       event_category: "general",
-      event_label: "custom",
-      value: value,
+      event_label: value,
     });
   };
 }

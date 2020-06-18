@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const SEO = (props: any) => {
   const { intl, title, description, bodyClass, keywords } = props;
-  const {site} = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -32,10 +32,6 @@ const SEO = (props: any) => {
     {
       name: `apple-mobile-web-app-status-bar-style`,
       content: `black-translucent`,
-    },
-    {
-      name: `robots`,
-      content: `max-snippet:-1, max-image-preview:large, max-video-preview:-1`,
     },
   ];
 
