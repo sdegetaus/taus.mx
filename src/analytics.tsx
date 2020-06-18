@@ -11,11 +11,13 @@ export const Events = Object.freeze({
 export default class Analytics {
   static logEvent = (action: string) => {
     // console.log(action);
+    // @ts-ignore
     gtag("event", action);
   };
 
   static logEventWithParams = (action: string, value: any) => {
     // console.log(action, value);
+    // @ts-ignore
     gtag("event", action, {
       event_category: "general",
       event_label: "custom",
