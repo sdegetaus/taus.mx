@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const SEO = (props: any) => {
   const { intl, title, description, bodyClass, keywords } = props;
-  const query = useStaticQuery(graphql`
+  const {site} = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -14,9 +14,6 @@ const SEO = (props: any) => {
       }
     }
   `);
-
-  // grab site's metadata
-  const siteMetadata = query.site.siteMetadata;
 
   // default meta pairs
   const defaultMeta = [
@@ -66,11 +63,39 @@ const SEO = (props: any) => {
         },
         {
           name: `author`,
-          content: siteMetadata.author,
+          content: site.siteMetadata.author,
         },
         {
           name: `keywords`,
           content: metaKeywords,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
         },
       ]}
     >
