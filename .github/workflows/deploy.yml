@@ -8,16 +8,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Project
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set Node.js
+      - name: Use Node.js
         uses: actions/setup-node@master
         with:
           node-version: 10.x
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -26,3 +34,13 @@ jobs:
         if: success()
         with:
           path: public/
+
+      - name: Deploy to FTP
+        uses: sdegetaus/FTP-Deploy-Action
+        with:
+          ftp-server: ftp://${{ secrets.FTP_HOST }}
+          ftp-username: ${{ secrets.FTP_USER }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: public/
+
+      - run: ls -la
