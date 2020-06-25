@@ -72,7 +72,6 @@ const IndexPage = ({ intl, data }: IndexProps) => {
       <Archive data={data} />
       <Posts />
       <Contact />
-      <h5 style={{ color: "red" }}>Test</h5>
     </Layout>
   );
 };
