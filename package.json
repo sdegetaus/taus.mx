@@ -3,7 +3,7 @@
   "author": "Santiago Degetau",
   "description": "",
   "private": true,
-  "version": "2.1.2",
+  "version": "2.1.3",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
