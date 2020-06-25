@@ -4,7 +4,7 @@ import Language from "./language";
 
 import menuStyles from "./menu.module.scss";
 
-const Menu = ({ intl }) => {
+const Menu = ({ intl }: MenuProps) => {
   return (
     <div className={`${menuStyles.menu}`}>
       <nav>
@@ -26,5 +26,9 @@ const Menu = ({ intl }) => {
     </div>
   );
 };
+
+interface MenuProps {
+  intl: any;
+}
 
 export default injectIntl(Menu);

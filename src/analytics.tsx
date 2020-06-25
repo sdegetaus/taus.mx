@@ -9,18 +9,12 @@ export const Events = Object.freeze({
 });
 
 export default class Analytics {
-  static logEvent = (action: string) => {
-    // console.log(action);
+  static logEvent = (key: string, value?: any) => {
+    // console.log(key, value ?? "");
     // @ts-ignore
-    gtag("event", action);
-  };
-
-  static logEventWithParams = (action: string, value: any) => {
-    // console.log(action, value);
-    // @ts-ignore
-    gtag("event", action, {
-      event_category: "general",
-      event_label: value,
+    gtag("event", "click", {
+      key: key,
+      value: value ?? "",
     });
   };
 }

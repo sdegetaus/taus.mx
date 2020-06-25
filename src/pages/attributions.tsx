@@ -7,7 +7,7 @@ import { Attributions as List } from "../static-data";
 
 import attributionsStyles from "./attributions.module.scss";
 
-const Attributions = ({ intl }) => {
+const Attributions = ({ intl }: AttributionsProps) => {
   return (
     <Layout
       mainClass={attributionsStyles.main}
@@ -41,5 +41,9 @@ const Attributions = ({ intl }) => {
     </Layout>
   );
 };
+
+interface AttributionsProps {
+  intl: any;
+}
 
 export default injectIntl(Attributions);

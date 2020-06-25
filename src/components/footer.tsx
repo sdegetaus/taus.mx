@@ -6,7 +6,7 @@ import structStyles from "../styles/structure.module.scss";
 import footerStyles from "./footer.module.scss";
 import Analytics, { Events } from "../analytics";
 
-const Footer = ({ intl }) => {
+const Footer = ({ intl }: FooterProps) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -32,6 +32,7 @@ const Footer = ({ intl }) => {
             <Link
               to="/about"
               onClick={() => Analytics.logEvent(Events.click_about)}
+              title={data.site.siteMetadata.author}
               activeStyle={{
                 pointerEvents: "none",
                 cursor: "default",
@@ -40,11 +41,12 @@ const Footer = ({ intl }) => {
               {data.site.siteMetadata.author}
               <sup className={"fa fa-question-circle"}></sup>
             </Link>
-            &nbsp;&nbsp;
+            <br />
             <Link
               to="/attributions"
               onClick={() => Analytics.logEvent(Events.click_attributions)}
               className={footerStyles.attributions}
+              title={intl.formatMessage({ id: "pages.attributions" })}
               activeStyle={{
                 pointerEvents: "none",
                 cursor: "default",
@@ -59,5 +61,9 @@ const Footer = ({ intl }) => {
     </footer>
   );
 };
+
+interface FooterProps {
+  intl: any;
+}
 
 export default injectIntl(Footer);

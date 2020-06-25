@@ -3,7 +3,7 @@
     "name": "TausMX",
     "metadata": {
       "title": "Portafolio de Diseño y Programación de Santiago Degetau",
-      "description": "Portfolio de Santiago Degetau: Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web Mexicano",
+      "description": "Portafolio de Santiago Degetau: Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web Mexicano",
       "keywords": "santiago,degetau,portafolio,diseñador,programador"
     }
   },
@@ -20,7 +20,7 @@
     },
     "about": {
       "title": "Acerca de mí",
-      "bio": "¡Hola! Me llamo <strong>Santiago Degetau,</strong> soy un diseñador y programador de veinte y pico años mexicano. Desarrollo videojuegos, páginas web, y gráficos 2D y 3D.<br /> Trabajo en <strong><a target=\"_blank\" href=\"https://www.busybytes.mx\">BusyBytes GmbH<span class=\"fa fa-external-link\"></span></a></strong>"
+      "bio": "¡Hola! Me llamo <strong>Santiago Degetau,</strong> soy un diseñador y programador de veinte y pico años mexicano. Desarrollo videojuegos, páginas web, y gráficos 2D y 3D.<br /> Trabajo en <strong><a target=\"_blank\" href=\"https://www.busybytes.mx\" title=\"Visita la página web de BusyBytes\">BusyBytes GmbH<span class=\"fa fa-external-link\"></span></a></strong>"
     },
     "posts": {
       "loading": "Cargando...",
@@ -30,7 +30,8 @@
     },
     "contact": {
       "title": "¿Necesitas contactarme?",
-      "body": "Puedes hacerlo a través de"
+      "body": "Puedes hacerlo a través de",
+      "cta_title": "¡Escríbeme!"
     },
     "404": {
       "title": "404",

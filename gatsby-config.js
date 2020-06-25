@@ -2,8 +2,34 @@ module.exports = {
   siteMetadata: {
     author: "Santiago Degetau",
     siteUrl: "https://www.taus.mx",
+    image: "screenshot.png",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "TausMX",
+        short_name: "TMX",
+        description:
+          "Santiago Degetau's online portfolio: Mexican graphic designer, 3D artist, web & game developer and a professional hobbyist.",
+        lang: "en",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#102b44",
+        display: "standalone",
+        icon: "src/images/favicon.png",
+        localize: [
+          {
+            start_url: "/es/",
+            lang: "es",
+            name: "TausMX",
+            short_name: "TMX",
+            description:
+              "Portafolio de Santiago Degetau: Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web Mexicano.",
+          },
+        ],
+      },
+    },
     "gatsby-plugin-advanced-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",

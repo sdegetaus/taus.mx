@@ -7,7 +7,7 @@ import SocialIcons from "./social-icons";
 
 import contactStyles from "./contact.module.scss";
 
-const Contact = ({ intl }) => {
+const Contact = ({ intl }: FooterProps) => {
   return (
     <div className={contactStyles.contact}>
       <h4>{intl.formatMessage({ id: "content.contact.title" })}</h4>
@@ -15,6 +15,7 @@ const Contact = ({ intl }) => {
         {intl.formatMessage({ id: "content.contact.body" })}{" "}
         <button
           id={"email"}
+          title={intl.formatMessage({ id: "content.contact.cta_title" })}
           onClick={() => {
             Analytics.logEvent(Events.click_email);
             window.location.href = `mailto:${Email.name}@${Email.domain}`;
@@ -29,5 +30,9 @@ const Contact = ({ intl }) => {
     </div>
   );
 };
+
+interface FooterProps {
+  intl: any;
+}
 
 export default injectIntl(Contact);

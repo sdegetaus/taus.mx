@@ -4,6 +4,7 @@
 .footer {
   height: $FOOTER_HEIGHT_DESKTOP;
   font-size: 15px;
+  line-height: 5em;
 
   @include max-tablet {
     height: $FOOTER_HEIGHT_TABLET;
@@ -29,7 +30,7 @@
 
 .meta {
   font-weight: 300;
-  line-height: 1.4em;
+  line-height: 1.2em;
   margin-bottom: 5px;
 }
 
@@ -59,13 +60,15 @@
 }
 
 .attributions {
+  font-weight: 300 !important;
+  font-size: 13px;
   color: $accent-base;
-  mar &:hover {
+  &:hover {
     text-decoration: underline;
   }
   span {
     color: $accent-base;
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 11px;
+    margin-left: 3px;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { injectIntl } from "gatsby-plugin-intl";
-import { graphql, Link } from "gatsby";
+import { injectIntl, Link } from "gatsby-plugin-intl";
+import { graphql } from "gatsby";
 import Analytics, { Events } from "../analytics";
 
 import SEO from "../components/seo";
@@ -45,7 +45,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ intl, data }) => {
+const IndexPage = ({ intl, data }: IndexProps) => {
   return (
     <Layout mainClass={indexStyles.main} innerClass={indexStyles.inner}>
       <SEO title={intl.formatMessage({ id: "pages.home" })} />
@@ -75,5 +75,10 @@ const IndexPage = ({ intl, data }) => {
     </Layout>
   );
 };
+
+interface IndexProps {
+  intl: any;
+  data: any;
+}
 
 export default injectIntl(IndexPage);

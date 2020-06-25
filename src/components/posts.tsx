@@ -27,7 +27,7 @@ const defaultPosts: Posts = {
   error: false,
 };
 
-const Posts = ({ intl }) => {
+const Posts = ({ intl }: PostsProps) => {
   const [posts, setPosts] = useState(defaultPosts);
   useEffect(() => {
     fetch(
@@ -57,10 +57,7 @@ const Posts = ({ intl }) => {
             <li key={post.id} className={postsStyles.post}>
               <a
                 onClick={() =>
-                  Analytics.logEventWithParams(
-                    Events.click_blog_post,
-                    post.slug
-                  )
+                  Analytics.logEvent(Events.click_blog_post, post.slug)
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -102,5 +99,9 @@ const Posts = ({ intl }) => {
     </div>
   );
 };
+
+interface PostsProps {
+  intl: any;
+}
 
 export default injectIntl(Posts);

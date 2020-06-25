@@ -3,13 +3,14 @@ import { Helmet } from "react-helmet";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
-const SEO = (props: any) => {
-  const { intl, title, description, bodyClass, keywords } = props;
+const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           author
+          siteUrl
+          image
         }
       }
     }
@@ -54,45 +55,61 @@ const SEO = (props: any) => {
       meta={[
         ...defaultMeta,
         {
-          name: `description`,
+          name: "description",
           content: metaDescription,
         },
         {
-          name: `author`,
+          name: "author",
           content: site.siteMetadata.author,
         },
         {
-          name: `keywords`,
+          name: "keywords",
           content: metaKeywords,
         },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+        // {
+        //   property: "og:title",
+        //   content: title,
+        // },
+        // {
+        //   property: "og:type",
+        //   content: "website",
+        // },
+        // {
+        //   property: "og:url",
+        //   content: window.location.href,
+        // },
+        // {
+        //   property: "og:site_name",
+        //   content: "TausMX",
+        // },
+        // {
+        //   property: "og:description",
+        //   content: metaDescription,
+        // },
+        // {
+        //   property: "og:image",
+        //   content: `/${site.siteMetadata.image}`,
+        // },
+        // {
+        //   name: `twitter:card`,
+        //   content: `summary`,
+        // },
+        // {
+        //   name: `twitter:creator`,
+        //   content: site.siteMetadata.author,
+        // },
+        // {
+        //   name: `twitter:title`,
+        //   content: title,
+        // },
+        // {
+        //   name: `twitter:description`,
+        //   content: metaDescription,
+        // },
+        // {
+        //   name: `twitter:image`,
+        //   content: `/${site.siteMetadata.image}`,
+        // },
       ]}
     >
       <script
@@ -111,5 +128,13 @@ const SEO = (props: any) => {
     </Helmet>
   );
 };
+
+interface SEOProps {
+  intl: any;
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+  keywords?: string[];
+}
 
 export default injectIntl(SEO);

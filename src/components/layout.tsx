@@ -16,7 +16,7 @@ const Layout = ({
   mainClass = "",
   innerClass = "",
   children,
-}) => {
+}: LayoutProps) => {
   return (
     <>
       <div
@@ -35,5 +35,13 @@ const Layout = ({
     </>
   );
 };
+
+interface LayoutProps {
+  pageName?: string;
+  contentClass?: string;
+  mainClass?: string;
+  innerClass?: string;
+  children: JSX.Element[];
+}
 
 export default Layout;

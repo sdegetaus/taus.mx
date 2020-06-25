@@ -1,26 +1,26 @@
-interface SocialKey {
+export interface SocialKey {
   name: string;
   icon: string;
   url: URL;
 }
 
-interface Languages {
+export interface Languages {
   en: string;
   es: string;
 }
 
-interface Email {
+export interface Email {
   name: string;
   domain: string;
 }
 
-interface Attribution {
+export interface Attribution {
   name: string;
   text: string;
   url: URL;
 }
 
-interface Technology {
+export interface Technology {
   title: string;
   name: string;
 }

@@ -7,7 +7,7 @@ import Button from "../components/button";
 
 import _404Styles from "./404.module.scss";
 
-const NotFoundPage = ({ intl }) => (
+const NotFoundPage = ({ intl }: _404Props) => (
   <Layout mainClass={_404Styles.main} contentClass={_404Styles.content}>
     <SEO title={intl.formatMessage({ id: "pages.404" })} />
     <div className={_404Styles.title}>
@@ -33,5 +33,9 @@ const NotFoundPage = ({ intl }) => (
     </div>
   </Layout>
 );
+
+interface _404Props {
+  intl: any;
+}
 
 export default injectIntl(NotFoundPage);

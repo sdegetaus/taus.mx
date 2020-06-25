@@ -10,19 +10,7 @@ import Contact from "../components/contact";
 import aboutStyles from "./about.module.scss";
 import { Technologies } from "../static-data";
 
-const AboutPage = ({ intl }) => {
-  // used to shuffle technology array
-  const shuffleArray = arr => {
-    let j, x, i;
-    for (i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = arr[i];
-      arr[i] = arr[j];
-      arr[j] = x;
-    }
-    return arr;
-  };
-
+const AboutPage = ({ intl }: AboutProps) => {
   const data = useStaticQuery(graphql`
     query {
       images: allFile(
@@ -66,7 +54,7 @@ const AboutPage = ({ intl }) => {
               }}
             />
             <ul className={aboutStyles.tags}>
-              {shuffleArray(Technologies).map(tech => (
+              {Technologies.map(tech => (
                 <li key={tech.name} title={tech.title ? tech.title : tech.name}>
                   {tech.name}
                 </li>
@@ -79,5 +67,9 @@ const AboutPage = ({ intl }) => {
     </Layout>
   );
 };
+
+interface AboutProps {
+  intl: any;
+}
 
 export default injectIntl(AboutPage);

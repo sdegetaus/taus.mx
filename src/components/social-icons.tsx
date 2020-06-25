@@ -4,7 +4,7 @@ import Analytics, { Events } from "../analytics";
 
 import socialIconsStyles from "./social-icons.module.scss";
 
-const SocialIcons = ({ iconSize = 30 }) => {
+const SocialIcons = ({ iconSize = 30 }: SocialIconsProps) => {
   return (
     <ul className={socialIconsStyles.social}>
       {SocialData.map(key => (
@@ -12,11 +12,10 @@ const SocialIcons = ({ iconSize = 30 }) => {
           <a
             href={key.url.toString()}
             title={key.name}
+            target="_blank"
             aria-label={key.name}
             style={{ fontSize: iconSize }}
-            onClick={() =>
-              Analytics.logEventWithParams(Events.click_social, key.name)
-            }
+            onClick={() => Analytics.logEvent(Events.click_social, key.name)}
           >
             <span className={`${key.icon}`}></span>
           </a>
@@ -25,5 +24,9 @@ const SocialIcons = ({ iconSize = 30 }) => {
     </ul>
   );
 };
+
+interface SocialIconsProps {
+  iconSize?: number;
+}
 
 export default SocialIcons;

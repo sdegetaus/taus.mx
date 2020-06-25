@@ -19,7 +19,7 @@ const Language = () => {
                   : languageStyles.notActive
               }`}
               onClick={() => {
-                Analytics.logEventWithParams(Events.change_languge, lang);
+                Analytics.logEvent(Events.change_languge, lang);
                 changeLocale(lang);
               }}
               title={Languages[lang]}
@@ -33,5 +33,7 @@ const Language = () => {
     </>
   );
 };
+
+interface LanguageProps {}
 
 export default Language;

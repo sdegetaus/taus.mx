@@ -34,26 +34,21 @@
 
   a {
     &,
-    h1,
     span {
       @include global-animation;
     }
 
-    h1 {
-      color: $primary-base;
-      font-size: 22px;
-      @include max-tablet {
-        font-size: 24px;
-      }
-      span {
-        color: $primary-light;
-      }
+    color: $primary-base;
+    font-size: 22px;
+    @include max-tablet {
+      font-size: 24px;
+    }
+    span {
+      color: $primary-light;
     }
 
     &:hover {
-      h1 {
-        color: $secondary-base;
-      }
+      color: $secondary-base;
       span {
         color: $orange-base;
       }

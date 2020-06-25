@@ -4,15 +4,19 @@ import Analytics, { Events } from "../analytics";
 
 import archiveItemStyles from "./archive-item.module.scss";
 
-const ArchiveItem = ({ id, url, title, featuredImage, featuredImageAlt }) => {
+const ArchiveItem = ({
+  id,
+  url,
+  title,
+  featuredImage,
+  featuredImageAlt,
+}: ArchiveItemProps) => {
   return (
     <a
       href={!new RegExp(/https?:\/\//).test(url) ? `https://${url}` : url}
       title={title}
       className={archiveItemStyles.link}
-      onClick={() =>
-        Analytics.logEventWithParams(Events.click_portfolio_item, id)
-      }
+      onClick={() => Analytics.logEvent(Events.click_portfolio_item, id)}
     >
       {featuredImage ? (
         <Img
@@ -32,5 +36,13 @@ const ArchiveItem = ({ id, url, title, featuredImage, featuredImageAlt }) => {
     </a>
   );
 };
+
+interface ArchiveItemProps {
+  id: string;
+  url: string;
+  title: string;
+  featuredImage: any;
+  featuredImageAlt: string;
+}
 
 export default ArchiveItem;

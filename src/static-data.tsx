@@ -1,4 +1,6 @@
-export const SocialData: SocialKey[] = [
+import * as T from "./types";
+
+export const SocialData: T.SocialKey[] = [
   {
     name: "GitHub",
     icon: "fa fa-github",
@@ -9,19 +11,24 @@ export const SocialData: SocialKey[] = [
     icon: "fa fa-instagram",
     url: new URL("https://instagram.com/santiago.degetau"),
   },
+  {
+    name: "Behance",
+    icon: "fa fa-behance-square",
+    url: new URL("https://www.behance.net/SantiagoDegetau"),
+  },
 ];
 
-export const Languages: Languages = {
+export const Languages: T.Languages = {
   en: "English",
   es: "Español",
 };
 
-export const Email: Email = {
+export const Email: T.Email = {
   name: "santiago",
   domain: "taus.mx",
 };
 
-export const Attributions: Attribution[] = [
+export const Attributions: T.Attribution[] = [
   {
     name: "font-awesome",
     text: "Icons from <strong>FontAwesome</strong>",
@@ -46,7 +53,7 @@ export const Attributions: Attribution[] = [
   },
 ];
 
-export const Technologies: Technology[] = [
+export const Technologies: T.Technology[] = [
   {
     title: "Unity 3D",
     name: "Unity",
@@ -112,16 +119,8 @@ export const Technologies: Technology[] = [
     name: "Sass",
   },
   {
-    title: null,
-    name: "GraphQL",
-  },
-  {
     title: "Markup Language",
     name: "HTML5",
-  },
-  {
-    title: "Rust Language",
-    name: "Rust",
   },
   {
     title: null,
