@@ -36,7 +36,7 @@ jobs:
           path: public/
 
       - name: Deploy to FTP
-        uses: sdegetaus/FTP-Deploy-Action
+        uses: sdegetaus/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ftp://${{ secrets.FTP_HOST }}
           ftp-username: ${{ secrets.FTP_USER }}
