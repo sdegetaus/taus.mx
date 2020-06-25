@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  deploy:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
@@ -31,11 +31,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: actions/upload-artifact@v2
-        if: success()
-        with:
-          path: public/
-
       - name: Deploy to FTP
         uses: sdegetaus/FTP-Deploy-Action@3.1.1
         with:
@@ -43,5 +38,3 @@ jobs:
           ftp-username: ${{ secrets.FTP_USER }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
-
-      - run: ls -la
