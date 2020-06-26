@@ -13,8 +13,7 @@ export default class Analytics {
     // console.log(key, value ?? "");
     // @ts-ignore
     gtag("event", "click", {
-      key: key,
-      value: value ?? "",
+      event_category: value ?? null,
     });
   };
 }
