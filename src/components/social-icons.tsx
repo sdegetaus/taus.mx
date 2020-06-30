@@ -19,6 +19,7 @@ const SocialIcons = ({ iconSize = 30 }: SocialIconsProps) => {
           >
             <span className={`${key.icon}`}></span>
           </a>
+          Test
         </li>
       ))}
     </ul>
