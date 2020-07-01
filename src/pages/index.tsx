@@ -25,7 +25,6 @@ export const query = graphql`
             title
             url
             tags
-            category
             featuredImageAlt
             featuredImage {
               childImageSharp {
