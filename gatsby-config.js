@@ -80,5 +80,14 @@ module.exports = {
         redirect: false,
       },
     },
+    {
+      resolve: "gatsby-plugin-htaccess",
+      options: {
+        RewriteBase: true,
+        https: true,
+        www: true,
+        host: "www.rubixgame.com",
+      },
+    },
   ],
 };
