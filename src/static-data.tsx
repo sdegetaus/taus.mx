@@ -7,11 +7,6 @@ export const SocialData: T.SocialKey[] = [
     url: new URL("https://github.com/sdegetaus"),
   },
   {
-    name: "Instagram",
-    icon: "fa fa-instagram",
-    url: new URL("https://instagram.com/santiago.degetau"),
-  },
-  {
     name: "Behance",
     icon: "fa fa-behance-square",
     url: new URL("https://www.behance.net/SantiagoDegetau"),
@@ -31,20 +26,13 @@ export const Email: T.Email = {
 export const Attributions: T.Attribution[] = [
   {
     name: "font-awesome",
-    text: "Icons from <strong>FontAwesome</strong>",
+    text: "<strong>FontAwesome</strong>",
     url: new URL("https://fontawesome.com/"),
   },
   {
     name: "gatsby-js",
-    text: "Website created using <strong>Gatsby.js</strong>",
+    text: "<strong>Gatsby.js</strong>",
     url: new URL("https://www.gatsbyjs.org/"),
-  },
-  {
-    name: "isometric-macbook",
-    text: "MacBook Pro mockup by <strong>Shakuro</strong>",
-    url: new URL(
-      "https://dribbble.com/shots/3657246-FREE-isometric-MacBook-Pro-15-mockup"
-    ),
   },
   {
     name: "realistic-frame",
