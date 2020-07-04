@@ -85,7 +85,7 @@ module.exports = {
         RewriteBase: true,
         https: true,
         www: true,
-        host: "www.rubixgame.com",
+        host: "www.taus.mx",
       },
     },
   ],
