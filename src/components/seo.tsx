@@ -10,35 +10,15 @@ const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
         siteMetadata {
           author
           siteUrl
-          image
         }
       }
     }
   `);
 
-  // default meta pairs
-  const defaultMeta = [
-    {
-      name: `theme-color`,
-      content: `#102b44`,
-    },
-    {
-      name: `msapplication-navbutton-color`,
-      content: `#102b44`,
-    },
-    {
-      name: `apple-mobile-web-app-capable`,
-      content: `yes`,
-    },
-    {
-      name: `apple-mobile-web-app-status-bar-style`,
-      content: `black-translucent`,
-    },
-  ];
-
   // normalize metadata
   const metaDescription =
     description || intl.formatMessage({ id: "site.metadata.description" });
+
   const metaKeywords =
     keywords?.join(",") || intl.formatMessage({ id: "site.metadata.keywords" });
 
@@ -49,11 +29,10 @@ const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
         lang: intl.locale,
       }}
       title={title}
-      titleTemplate={`%s – ${intl.formatMessage({
+      titleTemplate={`%s - ${intl.formatMessage({
         id: "site.metadata.title",
       })}`}
       meta={[
-        ...defaultMeta,
         {
           name: "description",
           content: metaDescription,
@@ -66,50 +45,54 @@ const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
           name: "keywords",
           content: metaKeywords,
         },
-        // {
-        //   property: "og:title",
-        //   content: title,
-        // },
-        // {
-        //   property: "og:type",
-        //   content: "website",
-        // },
-        // {
-        //   property: "og:url",
-        //   content: window.location.href,
-        // },
-        // {
-        //   property: "og:site_name",
-        //   content: "TausMX",
-        // },
-        // {
-        //   property: "og:description",
-        //   content: metaDescription,
-        // },
-        // {
-        //   property: "og:image",
-        //   content: `/${site.siteMetadata.image}`,
-        // },
-        // {
-        //   name: `twitter:card`,
-        //   content: `summary`,
-        // },
-        // {
-        //   name: `twitter:creator`,
-        //   content: site.siteMetadata.author,
-        // },
-        // {
-        //   name: `twitter:title`,
-        //   content: title,
-        // },
-        // {
-        //   name: `twitter:description`,
-        //   content: metaDescription,
-        // },
-        // {
-        //   name: `twitter:image`,
-        //   content: `/${site.siteMetadata.image}`,
-        // },
+        {
+          name: `theme-color`,
+          content: `#102b44`,
+        },
+        {
+          name: `msapplication-navbutton-color`,
+          content: `#102b44`,
+        },
+        {
+          name: `apple-mobile-web-app-capable`,
+          content: `yes`,
+        },
+        {
+          name: `apple-mobile-web-app-status-bar-style`,
+          content: `black-translucent`,
+        },
+        {
+          property: "og:title",
+          content: `${title} - ${intl.formatMessage({
+            id: "site.metadata.title",
+          })}`,
+        },
+        {
+          property: "og:description",
+          content: metaDescription,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          name: "twitter:card",
+          content: "summary",
+        },
+        {
+          name: "twitter:creator",
+          content: site.siteMetadata.author,
+        },
+        {
+          name: "twitter:title",
+          content: `${title} - ${intl.formatMessage({
+            id: "site.metadata.title",
+          })}`,
+        },
+        {
+          name: "twitter:description",
+          content: metaDescription,
+        },
       ]}
     >
       <script
