@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     author: "Santiago Degetau",
     siteUrl: "https://www.taus.mx",
-    image: "screenshot.png",
   },
   plugins: [
     {
