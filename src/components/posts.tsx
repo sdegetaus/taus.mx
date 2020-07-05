@@ -59,8 +59,8 @@ const Posts = ({ intl }: PostsProps) => {
                 onClick={() =>
                   Analytics.logEvent(Events.click_blog_post, post.slug)
                 }
-                target="_blank"
-                rel="noreferrer"
+                target={"_blank"}
+                rel={"noopener noreferrer"}
                 aria-label={post.link.toString()}
                 title={
                   new DOMParser().parseFromString(

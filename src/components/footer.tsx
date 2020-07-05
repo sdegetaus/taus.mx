@@ -30,6 +30,7 @@ const Footer = ({ intl }: FooterProps) => {
             <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
             {new Date().getFullYear()}&nbsp;&ndash;&nbsp;
             <Link
+              rel={"noopener"}
               to="/about"
               onClick={() => Analytics.logEvent(Events.click_about)}
               title={data.site.siteMetadata.author}
@@ -43,6 +44,7 @@ const Footer = ({ intl }: FooterProps) => {
             </Link>
             <br />
             <Link
+              rel={"noopener"}
               to="/attributions"
               onClick={() => Analytics.logEvent(Events.click_attributions)}
               className={footerStyles.attributions}

@@ -23,9 +23,9 @@ const Attributions = ({ intl }: AttributionsProps) => {
             {List.map(key => (
               <li key={key.name}>
                 <a
-                  target="_blank"
-                  rel="nofollow"
+                  target={"_blank"}
                   aria-label={key.name}
+                  rel={"noopener noreferrer nofollow"}
                   href={key.url.toString()}
                   dangerouslySetInnerHTML={{
                     __html: `<p>${key.text}</p><span class="fa fa-external-link"></span>`,

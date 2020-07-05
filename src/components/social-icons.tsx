@@ -12,8 +12,9 @@ const SocialIcons = ({ iconSize = 30 }: SocialIconsProps) => {
           <a
             href={key.url.toString()}
             title={key.name}
-            target="_blank"
+            target={"_blank"}
             aria-label={key.name}
+            rel={"noopener noreferrer"}
             style={{ fontSize: iconSize }}
             onClick={() => Analytics.logEvent(Events.click_social, key.name)}
           >

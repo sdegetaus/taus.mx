@@ -14,6 +14,7 @@ const Menu = ({ intl }: MenuProps) => {
               to={`/`}
               activeClassName={menuStyles.active}
               title={intl.formatMessage({ id: "pages.home" })}
+              rel={"noopener"}
             >
               <span className="fa fa-home"></span>
             </Link>

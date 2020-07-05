@@ -17,6 +17,7 @@ const ArchiveItem = ({
       title={title}
       className={archiveItemStyles.link}
       onClick={() => Analytics.logEvent(Events.click_portfolio_item, id)}
+      rel={"noopener"}
     >
       {featuredImage ? (
         <Img

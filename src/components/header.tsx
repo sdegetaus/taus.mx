@@ -10,6 +10,7 @@ const Header = ({ intl }: HeaderProps) => (
     <div className={`${structStyles.inner}`}>
       <div className={`${headerStyles.logo}`}>
         <Link
+          rel={"noopener"}
           to="/"
           title={`${intl.formatMessage({
             id: "pages.home",

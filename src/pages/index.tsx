@@ -54,6 +54,7 @@ const IndexPage = ({ intl, data }: IndexProps) => {
             {intl.formatMessage({ id: "content.home.title" })}{" "}
             <Link
               to={"/about"}
+              rel={"noopener"}
               title={`${intl.formatMessage({
                 id: "pages.about",
               })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
