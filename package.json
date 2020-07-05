@@ -3,14 +3,15 @@
   "author": "Santiago Degetau",
   "description": "",
   "private": true,
-  "version": "2.1.4",
+  "version": "2.1.5",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "fresh": "npm run clean | npm run start",
     "start": "npm run develop",
-    "serve": "gatsby serve -o",
-    "clean": "gatsby clean"
+    "serve": "gatsby serve -o"
   },
   "dependencies": {
     "@types/react-helmet": "^6.0.0",

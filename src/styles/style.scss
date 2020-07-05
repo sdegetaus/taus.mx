@@ -1,4 +1,4 @@
-@import "_fonts.scss";
+@import "fonts.scss";
 @import "variables.scss";
 @import "media-queries.scss";
 @import "mixins.scss";
@@ -36,7 +36,6 @@ h5,
 h6,
 p,
 i {
-  @include primary-font;
   margin: 0;
   text-decoration: none;
 }
