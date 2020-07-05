@@ -28,7 +28,7 @@ const Footer = ({ intl }: FooterProps) => {
             })}`}
           >
             <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
-            {new Date().getFullYear()}&nbsp;&ndash;&nbsp;
+            {new Date().getFullYear()}&nbsp;
             <Link
               rel={"noopener"}
               to="/about"
@@ -42,6 +42,8 @@ const Footer = ({ intl }: FooterProps) => {
               {data.site.siteMetadata.author}
               <sup className={"fa fa-question-circle"}></sup>
             </Link>
+            &ndash;&nbsp;
+            {intl.formatMessage({ id: "all_rights_reserved" })}
             <br />
             <Link
               rel={"noopener"}
