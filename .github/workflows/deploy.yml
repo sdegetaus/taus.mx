@@ -9,7 +9,9 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
 
       - name: Use Node.js
         uses: actions/setup-node@master
@@ -38,4 +40,4 @@ jobs:
           ftp-username: ${{ secrets.FTP_USER }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
-          git-ftp-args: --all --insecure
+          git-ftp-args: --insecure
