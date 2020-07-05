@@ -131,6 +131,5 @@ module.exports = {
         host: "www.taus.mx",
       },
     },
-    "gatsby-plugin-no-sourcemaps",
   ],
 };
