@@ -47,22 +47,6 @@ const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
           content: metaKeywords,
         },
         {
-          name: `theme-color`,
-          content: `#102b44`,
-        },
-        {
-          name: `msapplication-navbutton-color`,
-          content: `#102b44`,
-        },
-        {
-          name: `apple-mobile-web-app-capable`,
-          content: `yes`,
-        },
-        {
-          name: `apple-mobile-web-app-status-bar-style`,
-          content: `black-translucent`,
-        },
-        {
           property: "og:title",
           content: `${title} - ${intl.formatMessage({
             id: "site.metadata.title",
