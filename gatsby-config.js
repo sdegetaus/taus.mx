@@ -24,7 +24,7 @@ module.exports = {
             name: "TausMX",
             short_name: "TMX",
             description:
-              "Portafolio de Santiago Degetau: Diseñador Gráfico, Artista 3D, Desarrollador y Programador Web Mexicano.",
+              "Portafolio de Santiago Degetau: Diseñador gráfico, artista 3D, desarrollador y programador web mexicano.",
           },
         ],
       },
