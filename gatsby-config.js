@@ -127,7 +127,6 @@ module.exports = {
         RewriteBase: true,
         https: true,
         www: true,
-        DisallowSymLinks: true,
         host: "www.taus.mx",
       },
     },
