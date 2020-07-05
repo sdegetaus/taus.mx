@@ -1,5 +1,7 @@
 import * as T from "./types";
 
+export const Version = require("../package.json").version;
+
 export const SocialData: T.SocialKey[] = [
   {
     name: "GitHub",

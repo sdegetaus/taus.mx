@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { injectIntl } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
+import { Version } from "../static-data";
 
 const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
   const { site } = useStaticQuery(graphql`
@@ -92,6 +93,10 @@ const SEO = ({ intl, title, description, bodyClass, keywords }: SEOProps) => {
         {
           name: "twitter:description",
           content: metaDescription,
+        },
+        {
+          name: "version",
+          content: Version,
         },
       ]}
     >
