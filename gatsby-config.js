@@ -78,6 +78,7 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    "gatsby-plugin-remove-generator",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",

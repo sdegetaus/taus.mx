@@ -11,7 +11,7 @@
     "cstart": "npm run clean | npm run start",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "npm run develop -o",
     "serve": "gatsby serve -o"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "^2.4.14",
     "gatsby-plugin-react-helmet": "^3.3.4",
+    "gatsby-plugin-remove-generator": "^1.0.5",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.4",
     "gatsby-plugin-sharp": "^2.6.11",
