@@ -61,7 +61,6 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ intl, data }: IndexProps) => {
-  console.log(data);
   return (
     <Layout mainClass={styles.main} innerClass={styles.inner}>
       <SEO title={intl.formatMessage({ id: "pages.home" })} />

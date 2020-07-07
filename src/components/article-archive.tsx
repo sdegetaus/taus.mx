@@ -1,25 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 import Analytics, { Events } from "../analytics";
 
 import styles from "./article-archive.module.scss";
 
-interface WPText {
-  rendered: string;
-}
-
-interface Article {
-  id: number;
-  title: WPText;
-  link: URL;
-  date: Date;
-  excerpt: WPText;
-  slug: string;
-}
-
 const ArticleArchive = ({ intl, edges }: ArticleArchiveProps) => {
-  console.log(edges);
-
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>
@@ -33,7 +18,7 @@ const ArticleArchive = ({ intl, edges }: ArticleArchiveProps) => {
               excerpt,
             },
           }) => (
-            <li className={styles.post}>
+            <li key={slug} className={styles.post}>
               <a
                 onClick={() => Analytics.logEvent(Events.click_blog_post, slug)}
                 target={"_blank"}
@@ -42,7 +27,6 @@ const ArticleArchive = ({ intl, edges }: ArticleArchiveProps) => {
                 title={title}
                 href={url}
               >
-                {console.log(excerpt)}
                 <div className={styles.postTitle}>
                   <h5>{title}</h5>
                   <span className={styles.postDate}>
