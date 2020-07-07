@@ -1,7 +1,6 @@
 import React from "react";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 import { graphql } from "gatsby";
-import Analytics, { Events } from "../analytics";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -74,7 +73,6 @@ const IndexPage = ({ intl, data }: IndexProps) => {
               title={`${intl.formatMessage({
                 id: "pages.about",
               })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
-              onClick={() => Analytics.logEvent(Events.click_about)}
             >
               Santiago
             </Link>

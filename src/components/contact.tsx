@@ -1,7 +1,6 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
 import { Email } from "../static-data";
-import Analytics, { Events } from "../analytics";
 
 import SocialIcons from "./social-icons";
 
@@ -17,7 +16,6 @@ const Contact = ({ intl }: FooterProps) => {
           id={"email"}
           title={intl.formatMessage({ id: "content.contact.cta_title" })}
           onClick={() => {
-            Analytics.logEvent(Events.click_email);
             window.location.href = `mailto:${Email.name}@${Email.domain}`;
           }}
         >

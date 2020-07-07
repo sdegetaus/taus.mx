@@ -1,6 +1,5 @@
 import React from "react";
 import Img from "gatsby-image";
-import Analytics, { Events } from "../analytics";
 
 import styles from "./portfolio-item.module.scss";
 
@@ -16,7 +15,6 @@ const ArchiveItem = ({
       href={!new RegExp(/https?:\/\//).test(url) ? `https://${url}` : url}
       title={title}
       className={styles.link}
-      onClick={() => Analytics.logEvent(Events.click_portfolio_item, id)}
       rel={"noopener"}
     >
       {featuredImage ? (

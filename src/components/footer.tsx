@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import structStyles from "../styles/structure.module.scss";
 import styles from "./footer.module.scss";
-import Analytics, { Events } from "../analytics";
 
 const Footer = ({ intl }: FooterProps) => {
   const data = useStaticQuery(graphql`
@@ -32,7 +31,6 @@ const Footer = ({ intl }: FooterProps) => {
             <Link
               rel={"noopener"}
               to="/about"
-              onClick={() => Analytics.logEvent(Events.click_about)}
               title={data.site.siteMetadata.author}
               activeStyle={{
                 pointerEvents: "none",
@@ -48,7 +46,6 @@ const Footer = ({ intl }: FooterProps) => {
             <Link
               rel={"noopener"}
               to="/attributions"
-              onClick={() => Analytics.logEvent(Events.click_attributions)}
               className={styles.attributions}
               title={intl.formatMessage({ id: "pages.attributions" })}
               activeStyle={{

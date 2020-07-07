@@ -1,6 +1,5 @@
 import React from "react";
 import { injectIntl } from "gatsby-plugin-intl";
-import Analytics, { Events } from "../analytics";
 
 import styles from "./article-archive.module.scss";
 
@@ -20,7 +19,6 @@ const ArticleArchive = ({ intl, edges }: ArticleArchiveProps) => {
           }) => (
             <li key={slug} className={styles.post}>
               <a
-                onClick={() => Analytics.logEvent(Events.click_blog_post, slug)}
                 target={"_blank"}
                 rel={"noopener noreferrer"}
                 aria-label={slug}

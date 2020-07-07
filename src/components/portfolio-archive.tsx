@@ -1,7 +1,5 @@
 import React from "react";
-
 import PortfolioItem from "./portfolio-item";
-
 import styles from "./portfolio-archive.module.scss";
 
 const PortfolioArchive = ({ edges }: PortfolioArchiveProps) => {
