@@ -3,7 +3,7 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl";
 import { Languages } from "../static-data";
 import Analytics, { Events } from "../analytics";
 
-import languageStyles from "./language.module.scss";
+import styles from "./language.module.scss";
 
 const Language = () => {
   return (
@@ -13,10 +13,8 @@ const Language = () => {
           languages.map((lang: string) => (
             <button
               key={lang}
-              className={`${languageStyles.button} ${
-                lang === current
-                  ? languageStyles.active
-                  : languageStyles.notActive
+              className={`${styles.button} ${
+                lang === current ? styles.active : styles.notActive
               }`}
               onClick={() => {
                 Analytics.logEvent(Events.change_languge, lang);

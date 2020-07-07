@@ -3,12 +3,12 @@ import Menu from "./menu";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 
 import structStyles from "../styles/structure.module.scss";
-import headerStyles from "./header.module.scss";
+import styles from "./header.module.scss";
 
 const Header = ({ intl }: HeaderProps) => (
-  <header className={`${headerStyles.header} ${structStyles.section}`}>
+  <header className={`${styles.header} ${structStyles.section}`}>
     <div className={`${structStyles.inner}`}>
-      <div className={`${headerStyles.logo}`}>
+      <div className={`${styles.logo}`}>
         <Link
           rel={"noopener"}
           to="/"

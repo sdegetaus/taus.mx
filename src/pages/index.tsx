@@ -5,18 +5,18 @@ import Analytics, { Events } from "../analytics";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import Archive from "../components/archive";
+import PortfolioArchive from "../components/portfolio-archive";
 import Contact from "../components/contact";
 import SocialIcons from "../components/social-icons";
-import Posts from "../components/posts";
+import Articles from "../components/article-archive";
 
-import indexStyles from "./index.module.scss";
+import styles from "./index.module.scss";
 
 export const query = graphql`
   query($language: String!) {
-    allMarkdownRemark(
+    portfolioItems: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { fields: { lang: { eq: $language } } }
+      filter: { fields: { lang: { eq: $language }, type: { eq: "portfolio" } } }
     ) {
       edges {
         node {
@@ -41,15 +41,32 @@ export const query = graphql`
         }
       }
     }
+    articleItems: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { fields: { type: { eq: "article" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            date
+            title
+            slug
+            url
+          }
+          excerpt(pruneLength: 300, format: HTML)
+        }
+      }
+    }
   }
 `;
 
 const IndexPage = ({ intl, data }: IndexProps) => {
+  console.log(data);
   return (
-    <Layout mainClass={indexStyles.main} innerClass={indexStyles.inner}>
+    <Layout mainClass={styles.main} innerClass={styles.inner}>
       <SEO title={intl.formatMessage({ id: "pages.home" })} />
-      <div className={indexStyles.content}>
-        <div className={indexStyles.title}>
+      <div className={styles.content}>
+        <div className={styles.title}>
           <h1>
             {intl.formatMessage({ id: "content.home.title" })}{" "}
             <Link
@@ -64,13 +81,13 @@ const IndexPage = ({ intl, data }: IndexProps) => {
             </Link>
           </h1>
         </div>
-        <div className={indexStyles.body}>
+        <div className={styles.body}>
           <p>{intl.formatMessage({ id: "content.home.body" })}</p>
         </div>
         <SocialIcons />
       </div>
-      <Archive data={data} />
-      <Posts />
+      <PortfolioArchive edges={data.portfolioItems.edges} />
+      <Articles edges={data.articleItems.edges} />
       <Contact />
     </Layout>
   );

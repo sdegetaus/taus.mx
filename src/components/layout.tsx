@@ -8,7 +8,7 @@ import "../styles/style.scss";
 import "font-awesome/scss/font-awesome.scss";
 
 import structStyles from "../styles/structure.module.scss";
-import layoutStyles from "./layout.module.scss";
+import styles from "./layout.module.scss";
 
 const Layout = ({
   pageName = "",
@@ -20,9 +20,7 @@ const Layout = ({
   return (
     <>
       <div
-        className={`${layoutStyles.content} ${pageName ?? ""} ${
-          contentClass ?? ""
-        }`}
+        className={`${styles.content} ${pageName ?? ""} ${contentClass ?? ""}`}
       >
         <Header />
         <main className={`${structStyles.section} ${mainClass ?? ""}`}>

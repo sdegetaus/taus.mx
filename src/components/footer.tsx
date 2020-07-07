@@ -3,7 +3,7 @@ import { injectIntl, Link } from "gatsby-plugin-intl";
 import { graphql, useStaticQuery } from "gatsby";
 
 import structStyles from "../styles/structure.module.scss";
-import footerStyles from "./footer.module.scss";
+import styles from "./footer.module.scss";
 import Analytics, { Events } from "../analytics";
 
 const Footer = ({ intl }: FooterProps) => {
@@ -18,16 +18,16 @@ const Footer = ({ intl }: FooterProps) => {
   `);
 
   return (
-    <footer className={`${footerStyles.footer} ${structStyles.section}`}>
-      <div className={`${structStyles.inner} ${footerStyles.inner}`}>
-        <div className={`${footerStyles.meta}`}>
+    <footer className={`${styles.footer} ${structStyles.section}`}>
+      <div className={`${structStyles.inner} ${styles.inner}`}>
+        <div className={`${styles.meta}`}>
           <span
-            className={`${footerStyles.copy}`}
+            className={`${styles.copy}`}
             title={`${data.site.siteMetadata.author} | ${intl.formatMessage({
               id: "all_rights_reserved",
             })}`}
           >
-            <i className={`${footerStyles.copyrightIcon} fa fa-copyright`}></i>
+            <i className={`${styles.copyrightIcon} fa fa-copyright`}></i>
             {new Date().getFullYear()}&nbsp;
             <Link
               rel={"noopener"}
@@ -49,7 +49,7 @@ const Footer = ({ intl }: FooterProps) => {
               rel={"noopener"}
               to="/attributions"
               onClick={() => Analytics.logEvent(Events.click_attributions)}
-              className={footerStyles.attributions}
+              className={styles.attributions}
               title={intl.formatMessage({ id: "pages.attributions" })}
               activeStyle={{
                 pointerEvents: "none",

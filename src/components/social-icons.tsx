@@ -2,11 +2,11 @@ import React from "react";
 import { SocialData } from "../static-data";
 import Analytics, { Events } from "../analytics";
 
-import socialIconsStyles from "./social-icons.module.scss";
+import styles from "./social-icons.module.scss";
 
 const SocialIcons = ({ iconSize = 30 }: SocialIconsProps) => {
   return (
-    <ul className={socialIconsStyles.social}>
+    <ul className={styles.social}>
       {SocialData.map(key => (
         <li key={key.name}>
           <a

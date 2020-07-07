@@ -1,13 +1,12 @@
 import React from "react";
-import { injectIntl } from "gatsby-plugin-intl";
+import { injectIntl, Link } from "gatsby-plugin-intl";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Button from "../components/button";
 
 import _404Styles from "./404.module.scss";
 
-const NotFoundPage = ({ intl }: _404Props) => (
+const NotFoundPage = ({ intl }: NotFoundPageProps) => (
   <Layout mainClass={_404Styles.main} contentClass={_404Styles.content}>
     <SEO title={intl.formatMessage({ id: "pages.404" })} />
     <div className={_404Styles.title}>
@@ -21,20 +20,21 @@ const NotFoundPage = ({ intl }: _404Props) => (
       />
     </div>
     <div className={_404Styles.cta}>
-      <Button
-        to="/"
+      <Link
+        to={"/"}
         title={`${intl.formatMessage({
           id: "pages.home",
         })} | ${intl.formatMessage({ id: "site.metadata.title" })}`}
-        icon={"arrow-left"}
+        rel={"noopener"}
       >
+        <span className={"fa fa-arrow-left"}></span>
         {intl.formatMessage({ id: "return_home" })}
-      </Button>
+      </Link>
     </div>
   </Layout>
 );
 
-interface _404Props {
+interface NotFoundPageProps {
   intl: any;
 }
 

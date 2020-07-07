@@ -2,7 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import Analytics, { Events } from "../analytics";
 
-import archiveItemStyles from "./archive-item.module.scss";
+import styles from "./portfolio-item.module.scss";
 
 const ArchiveItem = ({
   id,
@@ -15,20 +15,20 @@ const ArchiveItem = ({
     <a
       href={!new RegExp(/https?:\/\//).test(url) ? `https://${url}` : url}
       title={title}
-      className={archiveItemStyles.link}
+      className={styles.link}
       onClick={() => Analytics.logEvent(Events.click_portfolio_item, id)}
       rel={"noopener"}
     >
       {featuredImage ? (
         <Img
-          className={archiveItemStyles.image}
+          className={styles.image}
           fluid={featuredImage.childImageSharp.fluid}
           title={title}
           alt={featuredImageAlt}
         />
       ) : (
         <img
-          className={archiveItemStyles.image}
+          className={styles.image}
           src="https://picsum.photos/505/285"
           title={title}
           alt={title}

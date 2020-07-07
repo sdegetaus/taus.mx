@@ -3,19 +3,38 @@ const path = require("path");
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === "MarkdownRemark") {
-    const slug = path.basename(node.fileAbsolutePath, ".md"); // gets slug (file-name || file-name.en)
-    const key = slug.replace(/\.[^\/.]+$/, ""); // removes language (if necessary)
-    const lang = path.extname(slug).replace(".", ""); // gets lang code (i.e. "en")
-    createNodeField({
-      node,
-      name: "key",
-      value: key,
-    });
-    createNodeField({
-      node,
-      name: "lang",
-      value: !lang ? "en" : lang,
-    });
+    const dir = path.dirname(node.fileAbsolutePath);
+    const portfolioDir = "src/portfolio";
+    const articlesDir = "src/articles";
+
+    if (dir.includes(portfolioDir)) {
+      const slug = path.basename(node.fileAbsolutePath, ".md"); // gets slug (file-name || file-name.en)
+      const key = slug.replace(/\.[^\/.]+$/, ""); // removes language (if necessary)
+      const lang = path.extname(slug).replace(".", ""); // gets lang code (i.e. "en")
+      createNodeField({
+        node,
+        name: "key",
+        value: key,
+      });
+      createNodeField({
+        node,
+        name: "lang",
+        value: !lang ? "en" : lang,
+      });
+      createNodeField({
+        node,
+        name: "type",
+        value: "portfolio",
+      });
+    } else if (dir.includes(articlesDir)) {
+      createNodeField({
+        node,
+        name: "type",
+        value: "article",
+      });
+    } else {
+      console.log("########### UNKNOWN MARKDOWN TYPE ###########");
+    }
   }
 };
 
